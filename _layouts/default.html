@@ -5,15 +5,30 @@
 
   <body>
 
-    {% include header.html %}
-
-    <div class="page-content">
+    
+   
+    <div class="section group">
+	<div class="col span_1_of_2">
+	  
+	  
+	  {% include header.html %}<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+	{% include footer.html %}
+	
+	<span class="sidebar-graphic">{% include icons/mountain.svg %}</span>
+	<span class="scroll_arrow">{% include icons/down_arrow.svg %}</span>
+	</div>
+	<div class="col span_2_of_2">
+	  <div class="page-content">
       <div class="wrapper">
         {{ content }}
       </div>
     </div>
+	</div>
+</div>
 
-    {% include footer.html %}
+    
+
+    
 
   </body>
 

@@ -178,7 +178,6 @@ pre {
  * Clearfix
  */
 %clearfix {
-
     &:after {
         content: "";
         display: table;
@@ -188,19 +187,78 @@ pre {
 
 
 
-/**
+/*
  * Icons
  */
 .icon {
-
     > svg {
         display: inline-block;
-        width: 16px;
-        height: 16px;
+        width: 32px;
+        height: 32px;
         vertical-align: middle;
 
         path {
             fill: $grey-color;
         }
     }
+}
+
+/*
+ * Other graphics
+ */
+.graphic_float {
+    position: absolute;
+    
+    > svg {
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.sidebar-graphic{
+    @extend .graphic_float;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    bottom: 0;
+}
+
+/*
+ * Scroll arrow for mobiles
+ */
+
+.scroll_arrow {
+    @extend .graphic_float;
+    width: $scroll-arrow-size;
+    height: $scroll-arrow-size;
+    margin-left: -$scroll-arrow-size / 2;
+    left: 50%;
+    bottom: 0;
+    
+    > svg {
+         path {
+            fill: $side-bar-colour;
+            stroke: $grey-color;
+            stroke-width: 12px;
+         }
+         @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
+    }
+}
+
+.scroll_arrow:hover {
+    > svg { path { stroke: $side-bar-colour; } }
+}
+
+@keyframes scroll_arrow_anim {
+    from { top: 0; }
+    to { top: 10%; }
+}
+@-webkit-keyframes scroll_arrow_anim {
+    from { top: 0; }
+    to { top: 10%; }
 }

@@ -1,11 +1,11 @@
-/**
+/*
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
-    border-bottom: 1px solid $grey-color-light;
+    // border-top: 5px solid $grey-color-dark;
+    // border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
-
+    height: 56px;
     // Positioning context for the mobile navigation icon
     position: relative;
 }
@@ -92,9 +92,7 @@
     }
 }
 
-
-
-/**
+/*
  * Site footer
  */
 .site-footer {
@@ -162,9 +160,7 @@
     }
 }
 
-
-
-/**
+/*
  * Page content
  */
 .page-content {
@@ -194,9 +190,7 @@
     font-size: 24px;
 }
 
-
-
-/**
+/*
  * Posts
  */
 .post-header {
@@ -239,4 +233,56 @@
             font-size: 18px;
         }
     }
+}
+
+body {
+	background: rgb(245, 245, 245);
+}
+
+/*
+ * Two-column design
+ */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	position: relative; 
+}
+
+.col {
+	display: block;
+	
+}
+.col:first-child { margin-left: 0; }
+
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TWO  */
+
+.span_1_of_2 {
+	width: 40%;
+	height: 100vh;
+	float:left;
+	position: fixed;
+	background: $side-bar-colour;
+	overflow: hidden;
+}
+.span_2_of_2 {
+	width: 60%;
+	float: right;
+// 	background: rgb(200, 200, 200);
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 0;
+	}
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+	.span_1_of_2 { position: relative; }
+	.span_2_of_2 { float: left; }
 }
