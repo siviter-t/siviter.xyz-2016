@@ -206,7 +206,7 @@ pre {
 /*
  * Other graphics
  */
-.graphic_float {
+#graphic_float {
     position: absolute;
     
     > svg {
@@ -220,8 +220,8 @@ pre {
     }
 }
 
-.sidebar-graphic{
-    @extend .graphic_float;
+#sidebar-graphic{
+    @extend #graphic_float;
     width: 100%;
     height: 30%;
     left: 0;
@@ -232,8 +232,8 @@ pre {
  * Scroll arrow for mobiles
  */
 
-.scroll_arrow {
-    @extend .graphic_float;
+#scroll_arrow {
+    @extend #graphic_float;
     width: $scroll-arrow-size;
     height: $scroll-arrow-size;
     margin-left: -$scroll-arrow-size / 2;
@@ -251,7 +251,7 @@ pre {
     }
 }
 
-.scroll_arrow:hover {
+#scroll_arrow:hover {
     > svg { path { stroke: $side-bar-colour; } }
 }
 

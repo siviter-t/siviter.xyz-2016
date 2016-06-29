@@ -251,39 +251,38 @@ body {
 
 .col {
 	display: block;
-	
+	margin: 0;
 }
+
 .col:first-child { margin-left: 0; }
+.group:before, .group:after { content: ""; display: table; }
+.group:after { clear: both; }
+.group { zoom: 1; /* For IE 6/7 */ }
 
-.group:before,
-.group:after { content:""; display:table; }
-.group:after { clear:both;}
-.group { zoom:1; /* For IE 6/7 */ }
-
-/*  GRID OF TWO  */
-
-.span_1_of_2 {
+.sidebar {
+    @extend .col;
 	width: 40%;
 	height: 100vh;
+	max-height: 100vh;
 	float:left;
 	position: fixed;
-	background: $side-bar-colour;
 	overflow: hidden;
+	background: $side-bar-colour;
 }
-.span_2_of_2 {
+
+.contentbar {
+    @extend .col;
 	width: 60%;
 	float: right;
-// 	background: rgb(200, 200, 200);
 }
 
-/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+/*
+ * Mobile-responsive design
+ */
 
 @media only screen and (max-width: 480px) {
-	.col { 
-		margin: 0;
-	}
-	.span_2_of_2, .span_1_of_2 { width: 100%; }
-	.span_1_of_2 { position: relative; }
-	.span_2_of_2 { float: left; }
-	.scroll_arrow { display: inline; }
+	.sidebar, .contentbar { width: 100%; }
+	.sidebar { position: relative; }
+	.contentbar { float: left; }
+	#scroll_arrow { display: inline; }
 }
