@@ -12,21 +12,22 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
+$text-color: #111;
+$bg-color: #F5F5F5;
+$brand-color-light: #E9EBE3;
+$brand-color: #757672; // Sidebar colour with overlay at 0.5 opacity
+$brand-color-dark: #3A3B39; // Sidebar colour with overlay at 0.75 opacity 
 
-$grey-color:       #828282;
+$grey-color: #828282;
 $grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$grey-color-dark: darken($grey-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width: 800px;
 
-$on-palm:          600px;
-$on-laptop:        800px;
+$on-palm: 600px;
+$on-laptop: 800px;
 
-$side-bar-colour: #E9EBE3;
 $scroll-arrow-size: 64px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)

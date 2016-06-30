@@ -16,6 +16,13 @@
     }
 }
 
+// Multiplatform transitions
+@mixin transition($ani) {
+  -webkit-transition: $ani;
+     -moz-transition: $ani;
+          transition: $ani;
+}
+
 // Multiplatform animation
 @mixin animation($ani) {
   -webkit-animation: $ani;

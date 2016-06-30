@@ -1,6 +1,100 @@
 /*
- * Site header
+ * Site two-column styled layout
  */
+
+// Two-column design
+.coltable {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+	position: relative; 
+}
+
+.col {
+	display: block;
+	margin: 0;
+}
+
+.col:first-child { margin-left: 0; }
+.group:before, .group:after { content: ""; display: table; }
+.group:after { clear: both; }
+.group { zoom: 1; /* For IE 6/7 */ }
+
+// Left-most column
+.sidebar {
+    @extend .col;
+	width: 40%;
+	height: 100vh;
+	max-height: 100vh;
+	float:left;
+	position: fixed;
+	overflow: hidden;
+}
+
+// Right-most column
+.contentbar {
+    @extend .col;
+	width: 60%;
+	float: right;
+}
+
+// For placing stuff under the canvas
+.sidebar-underlay {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: $brand-color-light;
+}
+
+// Canvas for firefly effects
+.sidebar-canvas {
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+// Overlay for effect and for sidebar contents
+.sidebar-overlay {
+    z-index: 3; 
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+// Mobile responsive column design
+@media only screen and (max-width: 480px) {
+	.sidebar, .contentbar { width: 100%; }
+	.sidebar { position: relative; }
+	.contentbar { float: left; }
+}
+
+.sidebar-text {
+    width: 100%;
+    height: 56px;
+    position: absolute;
+    top: 30%;
+    text-align: center;
+}
+
+// Site title/name
+.site-title {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 64px;
+    letter-spacing: -1px;
+    color: $brand-color-light;
+    border-bottom: 1px solid $brand-color;
+    &:visited { color: $brand-color-light; }
+    &:hover {
+        color: $brand-color;
+        text-decoration: none;
+    }
+}
+
+// Site header - contains menu
 .site-header {
     // border-top: 5px solid $grey-color-dark;
     // border-bottom: 1px solid $grey-color-light;
@@ -8,20 +102,6 @@
     height: 56px;
     // Positioning context for the mobile navigation icon
     position: relative;
-}
-
-.site-title {
-    font-size: 26px;
-    font-weight: 300;
-    line-height: 56px;
-    letter-spacing: -1px;
-    margin-bottom: 0;
-    float: left;
-
-    &,
-    &:visited {
-        color: $grey-color-dark;
-    }
 }
 
 .site-nav {
@@ -46,7 +126,7 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $background-color;
+        background-color: $bg-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
@@ -235,53 +315,3 @@
     }
 }
 
-body {
-	background: rgb(245, 245, 245);
-}
-
-/*
- * Two-column design
- */
-.section {
-	clear: both;
-	padding: 0px;
-	margin: 0px;
-	position: relative; 
-}
-
-.col {
-	display: block;
-	margin: 0;
-}
-
-.col:first-child { margin-left: 0; }
-.group:before, .group:after { content: ""; display: table; }
-.group:after { clear: both; }
-.group { zoom: 1; /* For IE 6/7 */ }
-
-.sidebar {
-    @extend .col;
-	width: 40%;
-	height: 100vh;
-	max-height: 100vh;
-	float:left;
-	position: fixed;
-	overflow: hidden;
-	background: $side-bar-colour;
-}
-
-.contentbar {
-    @extend .col;
-	width: 60%;
-	float: right;
-}
-
-/*
- * Mobile-responsive design
- */
-
-@media only screen and (max-width: 480px) {
-	.sidebar, .contentbar { width: 100%; }
-	.sidebar { position: relative; }
-	.contentbar { float: left; }
-}
