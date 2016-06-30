@@ -2,14 +2,8 @@
 <html>
   {% include head.html %}
   <body>
-    <div class="section group">
-	    <div class="sidebar">
-	        {% include header.html %}
-	        <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-    	    {% include footer.html %}
-	        <span id="sidebar-graphic">{% include icons/mountain.svg %}</span>
-	        <span id="scroll_arrow">{% include icons/down_arrow.svg %}</span>
-	    </div>
+    <div class="coltable group">
+	    {% include sidebar.html %}
 	    <div class="contentbar">
 	        <div class="page-content">
 	            <div class="wrapper"> {{ content }} </div>

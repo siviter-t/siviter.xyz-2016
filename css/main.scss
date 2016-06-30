@@ -29,25 +29,11 @@ $on-laptop:        800px;
 $side-bar-colour: #E9EBE3;
 $scroll-arrow-size: 64px;
 
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "mixins",
         "base",
         "layout",
+        "graphics",
         "syntax-highlighting"
 ;

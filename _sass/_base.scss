@@ -1,6 +1,8 @@
-/**
- * Reset some basic elements
+/*
+ * Basic setup
  */
+
+// Reset some basic elements
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -9,8 +11,7 @@ dl, dd, ol, ul, figure {
 }
 
 
-
-/**
+/*
  * Basic styling
  */
 body {
@@ -26,8 +27,7 @@ body {
 }
 
 
-
-/**
+/*
  * Set `margin-bottom` to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6,
@@ -36,7 +36,6 @@ ul, ol, dl, figure,
 %vertical-rhythm {
     margin-bottom: $spacing-unit / 2;
 }
-
 
 
 /**
@@ -48,8 +47,7 @@ img {
 }
 
 
-
-/**
+/*
  * Figures
  */
 figure > img {
@@ -61,8 +59,7 @@ figcaption {
 }
 
 
-
-/**
+/*
  * Lists
  */
 ul, ol {
@@ -77,8 +74,7 @@ li {
 }
 
 
-
-/**
+/*
  * Headings
  */
 h1, h2, h3, h4, h5, h6 {
@@ -86,8 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-
-/**
+/*
  * Links
  */
 a {
@@ -105,8 +100,7 @@ a {
 }
 
 
-
-/**
+/*
  * Blockquotes
  */
 blockquote {
@@ -151,8 +145,7 @@ pre {
 }
 
 
-
-/**
+/*
  * Wrapper
  */
 .wrapper {
@@ -173,8 +166,7 @@ pre {
 }
 
 
-
-/**
+/*
  * Clearfix
  */
 %clearfix {
@@ -183,83 +175,4 @@ pre {
         display: table;
         clear: both;
     }
-}
-
-
-
-/*
- * Icons
- */
-.icon {
-    > svg {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
-}
-
-/*
- * Other graphics
- */
-#graphic_float {
-    position: absolute;
-    
-    > svg {
-        display: inline-block;
-        vertical-align: middle;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-#sidebar-graphic{
-    @extend #graphic_float;
-    width: 100%;
-    height: 30%;
-    left: 0;
-    bottom: 0;
-}
-
-/*
- * Scroll arrow for mobiles
- */
-
-#scroll_arrow {
-    @extend #graphic_float;
-    width: $scroll-arrow-size;
-    height: $scroll-arrow-size;
-    margin-left: -$scroll-arrow-size / 2;
-    left: 50%;
-    bottom: 0;
-    display: none;
-    
-    > svg {
-         path {
-            fill: $side-bar-colour;
-            stroke: $grey-color;
-            stroke-width: 12px;
-         }
-         @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
-    }
-}
-
-#scroll_arrow:hover {
-    > svg { path { stroke: $side-bar-colour; } }
-}
-
-@keyframes scroll_arrow_anim {
-    from { top: 0; }
-    to { top: 10%; }
-}
-@-webkit-keyframes scroll_arrow_anim {
-    from { top: 0; }
-    to { top: 10%; }
 }
