@@ -1,1 +1,1 @@
-jekyll serve --host $IP --port $PORT --baseurl '' --watch
+jekyll serve --host $IP --port $PORT --baseurl '' --watch --drafts

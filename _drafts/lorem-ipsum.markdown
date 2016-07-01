@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  "Lorem ipsum!"
-date:   2016-06-28 13:17:17 +0000
 categories: test
+permalink: /testpost/
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet congue enim, nec pellentesque arcu. In consequat tortor dictum leo faucibus, vel tempor nulla elementum. Nulla maximus fermentum ultricies. Suspendisse sed vehicula purus. Nulla quis nunc id quam suscipit dictum vel interdum leo. Morbi a velit eget risus dictum rutrum. Nunc dolor dolor, accumsan vitae fermentum eu, pharetra nec nulla.
