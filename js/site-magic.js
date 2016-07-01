@@ -9,7 +9,7 @@
  * not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
  
-/*global $*/ // Telling Cloud9 to accept this
+/*global $*/ // Telling Cloud9 to accept jQuery
 
 /// Wait for the document to be ready and initialise
 $(document).ready(function() {
@@ -20,8 +20,8 @@ function button_triggers()
 /// Enable all button functionality
 {
    /// Scroll the page down for mobile users on down arrow click/touch
-   $('#scroll_arrow').click( function()
+   $('#scroll_arrow').on('click touch', function ()
    {
-      $("html, body").animate({ scrollTop: $(window).innerHeight() }, 1250);
+      $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
    });
 }

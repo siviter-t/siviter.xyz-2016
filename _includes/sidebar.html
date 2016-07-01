@@ -7,7 +7,8 @@
 		{% include header.html %}
 		<div class="sidebar-text">
 			<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
-		
+			<p class="site-description">{{ site.description }}</p>
+			{% include social-media.html %}
 		</div>
 		<span id="scroll_arrow">{% include icons/down_arrow.svg %}</span>
 	</div>

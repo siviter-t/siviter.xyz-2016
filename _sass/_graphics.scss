@@ -42,14 +42,15 @@
     
     > svg {
          path {
-            fill: $brand-color;
-            stroke: $brand-color-light;
-            stroke-width: 12px;
+            fill: $brand-color-light;
+            // stroke: $brand-color;
+            // stroke-width: 12px;
+            @include transition(fill 0.5s);
          }
          @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
     }
     
-    &:hover { > svg { path { fill: $brand-color-dark; } } }
+    &:hover { > svg { path { fill: $brand-color; } } }
 }
 
 // Scroll arrow animations
