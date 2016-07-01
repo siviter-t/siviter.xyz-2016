@@ -1,9 +1,3 @@
----
-layout: page
-title: About
-permalink: /about/
----
-
 # Siviter.xyz
 
 #### A modern spin on the traditional curriculum vitae or portfolio.
