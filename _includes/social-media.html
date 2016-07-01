@@ -1,24 +1,30 @@
 <ul class="social-media-list">
   
+  <!--Email Icon-->
+  {% if site.email %}
+  <li>
+    <a href="mailto:{{ site.email }}">
+      <span class="icon icon-email">{% include icons/email.svg %}</span>
+    </a>
+  </li>
+  {% endif %}
+  
   <!--GitHub Icon-->
   {% if site.github_username %}
   <li>
     <a href="https://github.com/{{ site.github_username }}">
-      <span class="icon icon--github">{% include icons/github.svg %}</span>
-      <!--<span class="username">{{ site.github_username }}</span>-->
+      <span class="icon icon-github">{% include icons/github.svg %}</span>
     </a>
   </li>
   {% endif %}
   
-  <!--Twitter Icon-->
-  {% if site.twitter_username %}
+  <!--LinkedIn Icon-->
+  {% if site.linkedin_username %}
   <li>
-    <a href="https://twitter.com/{{ site.twitter_username }}">
-      <span class="icon icon--twitter">{% include icons/twitter.svg %}</span>
+    <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
+      <span class="icon icon-linkedin">{% include icons/linkedin.svg %}</span>
     </a>
   </li>
   {% endif %}
-  
-  <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
   
 </ul>

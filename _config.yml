@@ -7,13 +7,14 @@
 
 # Site settings
 title: Taylor Siviter
-email: taylor@siviter.xyz
 domain_name: siviter.xyz
 description: > # this means to ignore newlines until "baseurl:"
   Physicist, Programmer, Student
 url: "http://siviter.xyz" # the base hostname & protocol for your site
+email: taylor@siviter.xyz
 twitter_username: siviter_t
 github_username:  siviter-t
+linkedin_username: taylor-siviter
 
 # Handling Reading
 safe: false

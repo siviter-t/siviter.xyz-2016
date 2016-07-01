@@ -17,10 +17,6 @@
     }
 }
 
-
-/*
- * Graphics in the sidebar
- */
 // Mountain svg
 #sidebar-graphic{
     @extend #graphic_float;
@@ -49,8 +45,8 @@
          }
          @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
     }
-    
     &:hover { > svg { path { fill: $brand-color; } } }
+    @include media-query($on-palm) { display: inline; }
 }
 
 // Scroll arrow animations
@@ -63,22 +59,17 @@
     to { top: 10%; }
 }
 
-// Only appear for mobile/small screens
-@media only screen and (max-width: 480px) { #scroll_arrow { display: inline; } }
-
-
-/*
- * Icons
- */
+// General Icons
 .icon {
     > svg {
         display: inline-block;
         width: 32px;
         height: 32px;
         vertical-align: middle;
-
         path {
-            fill: $grey-color;
+            fill: $brand-color-light;
+            @include transition(fill 0.5s);
         }
     }
+    &:hover { > svg { path { fill: $brand-color; } } }
 }
