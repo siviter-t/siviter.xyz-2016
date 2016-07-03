@@ -26,10 +26,19 @@
 	width: 40%;
 	height: 100vh;
 	max-height: 100vh;
-	float:left;
+	float: left;
 	position: fixed;
 	overflow: hidden;
 }
+
+// Full-width on home page
+.home { 
+    width: 100%; 
+    #scroll_arrow { // Hide scroll arrow on home page
+        display: none; 
+        @include media-query($on-palm) { display: none; }
+    }
+} 
 
 // Right-most column
 .contentbar {
