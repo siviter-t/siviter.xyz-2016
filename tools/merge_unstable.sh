@@ -1,2 +1,2 @@
 git checkout gh-pages
-git rebase unstable
+git merge unstable
