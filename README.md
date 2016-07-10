@@ -1,6 +1,6 @@
 # Siviter.xyz
 
-#### A modern spin on the traditional curriculum vitae or portfolio.
+#### A modern spin on the traditional curriculum vitae or portfolio
 
 ***
 
