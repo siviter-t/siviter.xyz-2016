@@ -121,35 +121,37 @@
 
 // Site header - contains menu
 .site-header {
-    // border-top: 5px solid $grey-color-dark;
-    // border-bottom: 1px solid $grey-color-light;
-    min-height: 56px;
+    width: 100%;
     height: 56px;
-    // Positioning context for the mobile navigation icon
+    min-height: 56px;
     position: relative;
+    text-align: right;
+    @include media-query($on-palm) { position: fixed; }
 }
 
 .site-nav {
-    position: absolute;
-    top: $spacing-unit / 8;
-    right: $spacing-unit;
     line-height: 56px;
-
+    margin: 0 3 * $spacing-unit / 4 0;
+    border-bottom: 1px solid $brand-color;
     .menu-icon {
         display: none;
     }
-
-    .page-link {
-        color: $brand-color-light;
-        line-height: $base-line-height;
-        
-        &:hover { color: $brand-color; }
-        // Gaps between nav items, but not on the last one
-        &:not(:last-child) {
-            margin-right: 20px;
+    
+    .link-case{
+        display: inline-block;
+        height: 100%;
+        .page-link {
+            color: $brand-color-light;
+            line-height: $base-line-height;
+            background-color: rgba(255, 255, 255, 0.05);
+            &:hover { color: $brand-color; }
+            // Gaps between nav items, but not on the last one
+            &:not(:last-child) {
+                margin-right: 20px;
+            }
         }
     }
-
+    
     @include media-query($on-palm) {
         position: absolute;
         top: 9px;
@@ -158,6 +160,7 @@
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
+        margin: 0;
         .menu-icon {
             display: block;
             float: right;
