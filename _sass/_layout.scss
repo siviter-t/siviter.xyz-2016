@@ -130,26 +130,40 @@
 }
 
 .site-nav {
+    height: 56px;
     line-height: 56px;
-    margin: 0 3 * $spacing-unit / 4 0;
+    margin: 0 $spacing-unit 0;
     border-bottom: 1px solid $brand-color;
-    .menu-icon {
-        display: none;
+    position: relative;
+    .menu-icon { display: none; }
+    .trigger { 
+        height: 48px;
+        line-height: 48px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
-    
-    .link-case{
+    .page-link {
+        line-height: 31px;
+        height: 31px;
+        padding: 0 10px;
         display: inline-block;
-        height: 100%;
-        .page-link {
-            color: $brand-color-light;
-            line-height: $base-line-height;
-            background-color: rgba(255, 255, 255, 0.05);
-            &:hover { color: $brand-color; }
-            // Gaps between nav items, but not on the last one
-            &:not(:last-child) {
-                margin-right: 20px;
-            }
+        vertical-align: bottom;
+        border-top: 3px solid $brand-color;
+        background-color: rgba(255, 255, 255, 0.05);
+        color: $brand-color-light;
+        &:hover {
+            line-height: 45px;
+            height: 45px;
+            color: $hover-colour;
+            background-color: $brand-color;
+            border-top: 3px solid $hover-colour;
         }
+        &:not(:last-child) { margin-right: 5px; }
+        @include transition(line-height 0.25s ease-out,
+                            background-color 1s,
+                            height 0.5s,
+                            border 1s);
     }
     
     @include media-query($on-palm) {

@@ -17,7 +17,7 @@
 }
 
 // Multiplatform transitions
-@mixin transition($ani) {
+@mixin transition($ani...) {
   -webkit-transition: $ani;
      -moz-transition: $ani;
           transition: $ani;
