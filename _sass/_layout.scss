@@ -149,6 +149,7 @@
         display: inline-block;
         vertical-align: bottom;
         border-top: 3px solid $brand-color;
+        color: $brand-color-light;
         &:hover {
             line-height: 45px;
             height: 45px;
@@ -156,22 +157,22 @@
             background-color: $brand-color;
             border-top: 3px solid $hover-colour;
         }
-        &:visited { color: $brand-color-light; }
         &:not(:last-child) { margin-right: 5px; }
         @include transition(line-height 0.25s ease-out,
                             background-color 1s,
                             height 0.5s,
+                            color 0.5s,
                             border 1s);
     }
     
     @include media-query($on-palm) {
         height: auto;
-        top: 9px;
         margin: 0;
+        top: 9px;
+        right: 9px;
         position: absolute;
-        right: $spacing-unit / 2;
         text-align: right;
-        border-radius: 5px;
+        border-radius: 9px 0;
         border: 1px solid $brand-color;
         
         .menu-icon {
@@ -198,17 +199,16 @@
             height: auto;
             display: block;
             padding: 10px 10px;
-            color: $brand-color-dark;
-            background: none;
             vertical-align: baseline;
             &:hover {
                 line-height: $base-line-height;
                 height: auto;
                 color: $hover-colour;
-                background: none;
+                background-color: $brand-color;
                 border-top: 3px solid $hover-colour;
             }
             &:not(:last-child) { margin-right: 0; }
+            @include transition(background-color 0.25s, color 0.125s, border 0.25s);
         }
     }
 }
