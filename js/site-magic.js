@@ -1,20 +1,18 @@
 /*!
  * \file site-magic.js
  * \author Taylor Siviter
- * \version 0.1.0
- * \date June 2016
+ * \date July 2016
  * \brief Enables the interaction on siviter.xyz
  * \copyright Mozilla Public License, Version 2.0.
  * This Source Code Form is subject to the terms of the MPL, v. 2.0. If a copy of the MPL was
  * not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
  
-/*global $*/ // Telling Cloud9 to accept jQuery
-
 /// Wait for the document to be ready and initialise
 $(document).ready(function() {
    googleAnalytics();
    buttonTriggers();
+   scrollTriggers();
 });
 
 function buttonTriggers()
@@ -25,6 +23,19 @@ function buttonTriggers()
    {
       $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
    });
+}
+
+function scrollTriggers()
+/// Enable all scrolling functionality
+{
+  // Change site-nav when scrolled past the sidebar
+  $(window).on('scroll', function() {
+    if ($(document).scrollTop() > 3 * $(window).innerHeight() / 4) {
+      $('#site-nav').addClass('nav-fix');
+    } else {
+      $('#site-nav').removeClass('nav-fix');
+    }
+  });
 }
 
 function googleAnalytics()

@@ -39,8 +39,6 @@
     > svg {
          path {
             fill: $brand-color-light;
-            // stroke: $brand-color;
-            // stroke-width: 12px;
             @include transition(fill 0.5s);
          }
          @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
