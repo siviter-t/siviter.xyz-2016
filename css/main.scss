@@ -26,10 +26,10 @@ $grey-color-dark: darken($grey-color, 25%);
 // Width of the content area
 $content-width: 800px;
 
-$on-palm: 600px;
-$on-laptop: 800px;
+$phone: 600px;
+$tablet: 800px;
 
-$scroll-arrow-size: 64px;
+$scroll-arrow-size: 48px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

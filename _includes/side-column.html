@@ -1,0 +1,15 @@
+<div id="side-column" class="{{ include.type }}">
+	<div id="underlay">
+		<span id="sidebar-graphic">{% include icons/mountain.svg %}</span>
+	</div>
+	<div id="canvas-enclosure"></div>
+	<div id="overlay">
+		{% include header.html %}
+		<div id="left-panel">
+			<a id="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+			<p id="site-description">{{ site.description }}</p>
+			{% include social-media.html %}
+		</div>
+		<span id="scroll-arrow">{% include icons/down_arrow.svg %}</span>
+	</div>
+</div>

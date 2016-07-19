@@ -27,7 +27,7 @@
 }
 
 // Scroll arrow for mobiles
-#scroll_arrow {
+#scroll-arrow {
     @extend #graphic_float;
     width: $scroll-arrow-size;
     height: $scroll-arrow-size;
@@ -41,20 +41,26 @@
             fill: $brand-color-light;
             @include transition(fill 0.5s);
          }
-         @include animation(scroll_arrow_anim 0.5s linear 0.5s infinite alternate);
+         @include animation(scroll_arrow_anim 0.5s ease-in 0.25s infinite alternate);
     }
     &:hover { > svg { path { fill: $brand-color; } } }
-    @include media-query($on-palm) { display: inline; }
+    @include media-query($phone) { display: inline; }
 }
+
+// // Scroll arrow animation
+// @include keyframes(scroll-arrow-ani) {
+//     from { top: 0; }
+//     to { top: 10%; }
+// }
 
 // Scroll arrow animations
 @keyframes scroll_arrow_anim {
     from { top: 0; }
-    to { top: 10%; }
+    to { top: 20%; }
 }
 @-webkit-keyframes scroll_arrow_anim {
     from { top: 0; }
-    to { top: 10%; }
+    to { top: 20%; }
 }
 
 // General Icons

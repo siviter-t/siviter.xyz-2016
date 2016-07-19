@@ -20,7 +20,7 @@ function buttonTriggers()
 /// Enable all button functionality
 {
   /// Scroll the page down for mobile users on down arrow click/touch
-  $('#scroll_arrow').on('click touch', function ()
+  $('#scroll-arrow').on('click touch', function ()
   {
     $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
   });
@@ -46,9 +46,9 @@ function fixHeights()
   $(window).resize(function () {
     var isMobile = window.matchMedia("only screen and (max-width: 600px)");
     if (isMobile.matches)
-      $('.sidebar').height($(window).innerHeight());
+      $('#side-column').height($(window).innerHeight());
     else
-      $('.sidebar').height('100vh');
+      $('#side-column').height('100vh');
   });
 }
 
@@ -70,7 +70,7 @@ function googleAnalytics()
 (function() {
   $(document).ready(function() {
     var animate, bugs, canvas, createBugs, numOfBugs, update;
-    canvas = new Lampyridae.Canvas('world', '#sidebar-canvas');
+    canvas = new Lampyridae.Canvas('world', '#canvas-enclosure');
     Lampyridae.bugSpeedMax = 5;
     numOfBugs = 15;
     bugs = [];

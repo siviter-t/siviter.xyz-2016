@@ -1,31 +1,43 @@
 /*
- * Sass mixins
+ * Sass mixins - lovely shorthand
  */
 
-// Media-queries
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
+// Screen-size or device dependent styles 
 @mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
+   @media screen and (max-width: $device) {
+      @content;
+   }
 }
 
-// Multiplatform transitions
-@mixin transition($ani...) {
-  -webkit-transition: $ani;
-     -moz-transition: $ani;
-          transition: $ani;
+// Cross-platform keyframes
+@mixin keyframes($name) {
+   @-webkit-keyframes #{$name} { @content; }
+      @-moz-keyframes #{$name} { @content; }
+       @-ms-keyframes #{$name} { @content; }
+        @-o-keyframes #{$name} { @content; }
+           @keyframes #{$name} { @content; }
 }
 
-// Multiplatform animation
+// Cross-platform animation
 @mixin animation($ani) {
-  -webkit-animation: $ani;
-     -moz-animation: $ani;
-          animation: $ani;
+   -webkit-animation: $ani;
+      -moz-animation: $ani;
+       -ms-animation: $ani;
+        -o-animation: $ani;
+           animation: $ani;
+}
+
+// Cross-platform transitions
+@mixin transition($ani...) {
+   -webkit-transition: $ani;
+      -moz-transition: $ani;
+       -ms-transition: $ani;
+        -o-transition: $ani;
+           transition: $ani;
+}
+
+// Cross-platform opacity
+@mixin opacity($opacity) {
+   opacity: $opacity;
+   filter: alpha(opacity=#{$opacity * 100});
 }
