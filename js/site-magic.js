@@ -43,7 +43,13 @@ function fixHeights()
 /// Fix changing heights of the sidebar. Primarily for mobile where the viewport changes size
 /// when scrolled down - i.e. the search bar collapses up, etc.
 {
-  $('.sidebar').height($(window).innerHeight())
+  $(window).resize(function () {
+    var isMobile = window.matchMedia("only screen and (max-width: 600px)");
+    if (isMobile.matches)
+      $('.sidebar').height($(window).innerHeight());
+    else
+      $('.sidebar').height('100vh');
+  });
 }
 
 function googleAnalytics()
