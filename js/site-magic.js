@@ -1,7 +1,7 @@
 /*!
  * \file site-magic.js
  * \author Taylor Siviter
- * \date July 2016
+ * \date July  2016
  * \brief Enables the interaction on siviter.xyz
  * \copyright Mozilla Public License, Version 2.0.
  * This Source Code Form is subject to the terms of the MPL, v. 2.0. If a copy of the MPL was
@@ -10,19 +10,20 @@
  
 /// Wait for the document to be ready and initialise
 $(document).ready(function() {
-   googleAnalytics();
-   buttonTriggers();
-   scrollTriggers();
+  buttonTriggers();
+  scrollTriggers();
+  fixHeights();
+  googleAnalytics();
 });
 
 function buttonTriggers()
 /// Enable all button functionality
 {
-   /// Scroll the page down for mobile users on down arrow click/touch
-   $('#scroll_arrow').on('click touch', function ()
-   {
-      $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
-   });
+  /// Scroll the page down for mobile users on down arrow click/touch
+  $('#scroll_arrow').on('click touch', function ()
+  {
+    $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
+  });
 }
 
 function scrollTriggers()
@@ -36,6 +37,13 @@ function scrollTriggers()
       $('#site-nav').removeClass('nav-fix');
     }
   });
+}
+
+function fixHeights()
+/// Fix changing heights of the sidebar. Primarily for mobile where the viewport changes size
+/// when scrolled down - i.e. the search bar collapses up, etc.
+{
+  $('.sidebar').height($(window).innerHeight())
 }
 
 function googleAnalytics()
