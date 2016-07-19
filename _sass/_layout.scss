@@ -46,10 +46,10 @@
         a, p { margin: 0; }
     }
     
-    #left-panel {
-        width: 100%;
+    #left-panel { @extend %dom-layer;
+        z-index: 4;
+        height: auto;
         top: 30%;
-        position: absolute;
     }
     
     #site-title {
@@ -91,6 +91,7 @@
 
 // Site header - contains menu
 #site-header {
+    z-index: 5;
     width: 100%;
     height: 56px;
     min-height: 56px;
@@ -158,7 +159,10 @@
             display: none;
         }
 
-        &:hover .menu { display: block; }
+        &:hover {
+            .menu { display: block; }
+            background-color: $brand-color-dark;
+        }
         
         .page-link {
             line-height: $base-line-height;
@@ -177,7 +181,7 @@
             @include transition(background-color 0.25s, color 0.125s, border 0.25s);
         }
         
-        // Change the site-nav colour when the page is scrolled down
+        // Change the site-nav colour when the page is scrolled down far enough on mobile
         @at-root &.nav-fix { background-color: $brand-color-dark; }
     }
 }
