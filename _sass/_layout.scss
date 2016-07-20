@@ -106,7 +106,7 @@
     border-bottom: 1px solid $brand-color;
     position: relative;
     .menu-icon { display: none; }
-    .menu { 
+    #menu { 
         height: 48px;
         line-height: 48px;
         position: absolute;
@@ -131,6 +131,7 @@
         &:not(:last-child) { margin-right: 5px; }
         @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
                             color 0.5s, border 1s);
+        @at-root &.active { border-top: 3px solid $hover-colour; }
     }
     
     @include media-query($phone) {
@@ -151,7 +152,7 @@
             padding: 4px;
         }
 
-        .menu {
+        #menu {
             height: auto;
             line-height: $base-line-height;
             position: relative;
@@ -160,7 +161,7 @@
         }
 
         &:hover {
-            .menu { display: block; }
+            #menu { display: block; }
             background-color: $brand-color-dark;
         }
         

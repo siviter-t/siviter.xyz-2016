@@ -13,12 +13,15 @@ $(document).ready(function() {
   buttonTriggers();
   scrollTriggers();
   fixHeights();
-  googleAnalytics();
+  enableGoogleAnalytics();
 });
 
 function buttonTriggers()
 /// Enable all button functionality
 {
+  /// Activate the current menu tab if we are on its page
+  $('#menu').find('a[href="/' + getTopLevelPathname() + '/"]').addClass('active')
+  
   /// Scroll the page down for mobile users on down arrow click/touch
   $('#scroll-arrow').on('click touch', function ()
   {
@@ -52,7 +55,11 @@ function fixHeights()
   });
 }
 
-function googleAnalytics()
+/*
+ * Utility functions
+ */
+
+function enableGoogleAnalytics()
 /// Enable Google Analytics
 {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -61,6 +68,15 @@ function googleAnalytics()
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-80839244-1', 'auto');
   ga('send', 'pageview');
+}
+ 
+function getTopLevelPathname()
+/// Finds the top level directory of the current path or url.
+/// Credit @see http://stackoverflow.com/a/10290657
+{
+  var path = top.location.pathname;
+  path = path.replace(/#[^#]+$/, "").replace(/\?[^\?]+$/, "").replace(/\/$/, "");
+  return path.substr(path.lastIndexOf("/") + 1);
 }
 
 /*
