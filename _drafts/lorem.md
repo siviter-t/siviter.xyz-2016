@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lorem ipsum!"
+title: Lorem ipsum!
 categories: test
 permalink: /testpost/
 ---
