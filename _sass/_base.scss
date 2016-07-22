@@ -90,7 +90,7 @@ a {
     text-decoration: none;
     &:visited { color: darken($brand-color, 15%); }
     &:hover { color: $hover-colour; }
-    @include transition(color 0.5s);
+    @include transition(color 1s);
 }
 
 

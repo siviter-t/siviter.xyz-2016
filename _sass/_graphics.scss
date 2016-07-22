@@ -43,7 +43,7 @@
          }
          @include animation(scroll_arrow_anim 0.5s ease-in 0.25s infinite alternate);
     }
-    &:hover { > svg { path { fill: $brand-color; } } }
+    &:hover { > svg { path { fill: $hover-colour; } } }
     @include media-query($phone) { display: inline; }
 }
 
@@ -72,8 +72,8 @@
         vertical-align: middle;
         path {
             fill: $brand-color-light;
-            @include transition(fill 0.5s);
+            @include transition(fill 1s);
         }
     }
-    &:hover { > svg { path { fill: $brand-color; } } }
+    &:hover { > svg { path { fill: $hover-colour; } } }
 }

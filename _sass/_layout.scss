@@ -59,7 +59,7 @@
         border-bottom: 1px solid $brand-color;
         padding-bottom: 6px;
         color: $brand-color-light;
-        &:hover { color: $brand-color; }
+        &:hover { color: $hover-colour; }
     }
     
     // Go full-width if it is the home page
