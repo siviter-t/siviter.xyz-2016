@@ -41,3 +41,22 @@
    opacity: $opacity;
    filter: alpha(opacity=#{$opacity * 100});
 }
+
+// Cross-platform dom selectability
+@mixin selectability($val)
+{
+   -webkit-touch-callout: $val;
+     -webkit-user-select: $val;
+      -khtml-user-select: $val;
+        -moz-user-select: $val;
+         -ms-user-select: $val;
+             user-select: $val;
+}
+
+// Cross-platform box-shadow
+@mixin box-shadow($val)
+{
+   -webkit-box-shadow: $val;
+      -moz-box-shadow: $val;
+           box-shadow: $val;
+}
