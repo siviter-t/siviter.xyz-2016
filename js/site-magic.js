@@ -10,9 +10,9 @@
  
 /// Wait for the document to be ready and initialise
 $(document).ready(function() {
+  fixMobileHeights();
   buttonTriggers();
-  scrollTriggers();
-  fixHeights();
+  windowTriggers();
   enableGoogleAnalytics();
 });
 
@@ -29,7 +29,7 @@ function buttonTriggers()
   });
 }
 
-function scrollTriggers()
+function windowTriggers()
 /// Enable all scrolling functionality
 {
   // Change site-nav when scrolled past the sidebar
@@ -42,17 +42,17 @@ function scrollTriggers()
   });
 }
 
-function fixHeights()
-/// Fix changing heights of the sidebar. Primarily for mobile where the viewport changes size
+function fixMobileHeights()
+/// Fixes varying heights of the side-column on mobile where the viewport changes size
 /// when scrolled down - i.e. the search bar collapses up, etc.
 {
-  $(window).resize(function () {
-    var isMobile = window.matchMedia("only screen and (max-width: 600px)");
-    if (isMobile.matches)
-      $('#side-column').height($(window).innerHeight());
-    else
-      $('#side-column').height('100vh');
-  });
+  var isMobile = window.matchMedia("only screen and (max-width: 600px)");
+  if (isMobile.matches)
+  {
+    $('#side-column').css('height', $(window).height() + "px");
+    $('#side-column').css('min-height', $(window).height() + "px");
+  }
+  return;
 }
 
 /*
