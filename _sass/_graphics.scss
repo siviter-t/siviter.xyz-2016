@@ -2,78 +2,74 @@
  * Graphics styles
  */
  
-// General floating graphic
-#graphic_float {
-    position: absolute;
-    
+// General svg graphic
+%graphic {
     > svg {
         display: inline-block;
         vertical-align: middle;
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
     }
 }
 
-// Mountain svg
-#sidebar-graphic{
-    @extend #graphic_float;
-    width: 100%;
-    height: 30%;
-    left: 0;
-    bottom: 0;
-}
-
-// Scroll arrow for mobiles
-#scroll-arrow {
-    @extend #graphic_float;
-    width: $scroll-arrow-size;
-    height: $scroll-arrow-size;
-    margin-left: -$scroll-arrow-size / 2;
-    left: 50%;
-    bottom: 0;
-    display: none;
-    
-    > svg {
-         path {
-            fill: $brand-color-light;
-            @include transition(fill 0.5s);
-         }
-         @include animation(scroll_arrow_anim 0.5s ease-in 0.25s infinite alternate);
-    }
-    &:hover { > svg { path { fill: $hover-colour; } } }
-    @include media-query($phone) { display: inline; }
-}
-
-// // Scroll arrow animation
-// @include keyframes(scroll-arrow-ani) {
-//     from { top: 0; }
-//     to { top: 10%; }
-// }
-
-// Scroll arrow animations
-@keyframes scroll_arrow_anim {
-    from { top: 0; }
-    to { top: 20%; }
-}
-@-webkit-keyframes scroll_arrow_anim {
-    from { top: 0; }
-    to { top: 20%; }
-}
-
 // General Icons
 .icon {
+    @extend %graphic;
     > svg {
-        display: inline-block;
-        width: 32px;
-        height: 32px;
-        vertical-align: middle;
+        width: $icon-size;
+        height: $icon-size;
         path {
             fill: $brand-color-light;
             @include transition(fill 1s);
         }
     }
     &:hover { > svg { path { fill: $hover-colour; } } }
+}
+
+// Mountain svg
+#sidebar-graphic{
+    @extend %graphic;
+    width: 100%;
+    height: 30%;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+// General arrows
+.arrow {
+    @extend %graphic;
+    width: $arrow-size;
+    height: $arrow-size;
+    > svg {
+        polygon {
+            fill: $brand-color-light;
+            @include transition(fill 1s);
+        }
+    }
+    &:hover { > svg { polygon { fill: $hover-colour; } } }
+}
+
+// Scroll arrow for mobiles
+#scroll-arrow {
+    @extend .arrow;
+    margin-left: -$arrow-size / 2;
+    left: 50%;
+    bottom: 10px;
+    position: absolute;
+    display: none;
+    > svg {
+        @include opacity(0);
+        position: absolute;
+        left: 0;
+        @include animation(scroll-arrow-ani 1.5s ease-in 0.25s infinite alternate);
+    }
+    @include media-query($phone) { display: inline; }
+}
+
+// Scroll arrow animation
+@include keyframes(scroll-arrow-ani) {
+    0% { top: 0; @include opacity(0); }
+    50% { top: 40%; @include opacity(1); }
+    100% { top: 20%; @include opacity(0.25); }
 }
