@@ -134,7 +134,7 @@
         @at-root &.active { border-top: 3px solid $hover-colour; }
     }
     
-    @include media-query($phone) {
+    @include media-query($tablet) {
         height: auto;
         margin: 0;
         top: 9px;
