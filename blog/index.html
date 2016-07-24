@@ -1,38 +1,47 @@
 ---
-layout: page
+layout: nowrap
 title: Blog
 ---
 
-<h1 class="page-heading">Posts</h1>
+<div class="wrapper">
+<h1 class="page-heading" id="blog-heading">Posts</h1>
+<a id="blog-rss" href="{{ "/feed.xml" | prepend: site.baseurl }}">
+  <span class="icon-dark icon-rss">{% include icons/rss.svg %}</span>
+</a>
+<p></p>
+</div>
 
-<ul class="post-list">
+<ul id="post-list">
   {% for post in paginator.posts %}
   <li>
-    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <h2>
-      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-    </h2>
-    <div class="post-excerpt">{{ post.excerpt }}</div>
+    <a class="blog-meta" href="{{ post.url | prepend: site.baseurl }}">
+      <div class="wrapper">
+        <span class="post-link">{{ post.title }}</span>
+        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+    </a>
+    <div class="blog-excerpt">
+      <div class="wrapper">
+        {{ post.excerpt }}
+        </div>
+      </div>
   </li>
   {% endfor %}
 </ul>
 
-<div class="pagination">
 {% if paginator.total_pages > 1 %}
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a> - 
-  {% endif %}
-  <span class="page_number">{{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    - <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% endif %}
+  <div id="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}" id="previous">
+        <span class="arrow-dark">{% include icons/arrows/back.svg %}</span>
+        Page {{ paginator.previous_page }}
+      </a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}" id="next">
+        Page {{ paginator.next_page }}
+        <span class="arrow-dark">{% include icons/arrows/forward.svg %}</span>
+      </a>
+    {% endif %}
+  </div>
 {% endif %}
-</div>
-
-<ul class="site-social-media">
-  <li>
-    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-      <span class="icon-dark icon-rss">{% include icons/rss.svg %}</span>
-    </a>
-  </li>
-</ul>
