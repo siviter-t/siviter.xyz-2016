@@ -29,6 +29,10 @@ title: Blog
 {% endif %}
 </div>
 
-<p class="rss-subscribe">
-  Subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a>
-</p>
+<ul class="site-social-media">
+  <li>
+    <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+      <span class="icon-dark icon-rss">{% include icons/rss.svg %}</span>
+    </a>
+  </li>
+</ul>
