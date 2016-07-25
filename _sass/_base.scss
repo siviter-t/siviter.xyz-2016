@@ -149,18 +149,12 @@ hr {
 /*
  * Webkit Scrollbar
  */
-::-webkit-scrollbar
-{
+::-webkit-scrollbar {
 	width: 4px;
+	height: 4px;
+	background: $brand-color-light;
 }
 
-::-webkit-scrollbar-track
-{
-    background-color: $brand-color-light;
-    -webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
-}
-
-::-webkit-scrollbar-thumb
-{
-	background-color: $brand-color-dark;
-}
+::-webkit-scrollbar-track { background: $brand-color-light; }
+::-webkit-scrollbar-thumb { background: $brand-color-dark; }
+::-webkit-scrollbar-corner { background: $brand-color-dark; }
