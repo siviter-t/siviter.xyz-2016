@@ -1,50 +1,42 @@
-/*
- * Sass mixins - lovely shorthand
+/* @file _mixins.scss
+ * @brief A selection of Sassy mixins - lovely shorthandyness and cross-platformyness
+ * @Copyright (c) 2016 Taylor Siviter
  */
 
-// Screen-size or device dependent styles 
+/* Common Stuff
+ */
+
+@mixin border-radius($val: 0) {
+   -webkit-border-radius: $val;
+      -moz-border-radius: $val;
+        -o-border-radius: $val;
+           border-radius: $val;
+}
+
+@mixin box-shadow($val: none)
+{
+   -webkit-box-shadow: $val;
+      -moz-box-shadow: $val;
+           box-shadow: $val;
+}
+
+@mixin opacity($opacity: 1) {
+   opacity: $opacity;
+   filter: alpha(opacity=#{$opacity * 100});
+}
+
+
+/* MQM - Media Queries and Miscellaneous
+ */
+
+// Screen.width dependent styles 
 @mixin media-query($device) {
    @media screen and (max-width: $device) {
       @content;
    }
 }
 
-// Cross-platform keyframes
-@mixin keyframes($name) {
-   @-webkit-keyframes #{$name} { @content; }
-      @-moz-keyframes #{$name} { @content; }
-       @-ms-keyframes #{$name} { @content; }
-        @-o-keyframes #{$name} { @content; }
-           @keyframes #{$name} { @content; }
-}
-
-// Cross-platform animation
-@mixin animation($ani) {
-   -webkit-animation: $ani;
-      -moz-animation: $ani;
-       -ms-animation: $ani;
-        -o-animation: $ani;
-           animation: $ani;
-}
-
-// Cross-platform transitions
-@mixin transition($ani...) {
-   -webkit-transition: $ani;
-      -moz-transition: $ani;
-       -ms-transition: $ani;
-        -o-transition: $ani;
-           transition: $ani;
-}
-
-// Cross-platform opacity
-@mixin opacity($opacity) {
-   opacity: $opacity;
-   filter: alpha(opacity=#{$opacity * 100});
-}
-
-// Cross-platform dom selectability
-@mixin selectability($val)
-{
+@mixin selectability($val: auto) {
    -webkit-touch-callout: $val;
      -webkit-user-select: $val;
       -khtml-user-select: $val;
@@ -53,10 +45,119 @@
              user-select: $val;
 }
 
-// Cross-platform box-shadow
-@mixin box-shadow($val)
-{
-   -webkit-box-shadow: $val;
-      -moz-box-shadow: $val;
-           box-shadow: $val;
+
+/* Animation and Transition
+ */
+
+@mixin animation($ani) {
+   -webkit-animation: $ani;
+      -moz-animation: $ani;
+       -ms-animation: $ani;
+        -o-animation: $ani;
+           animation: $ani;
+}
+
+@mixin keyframes($name) {
+   @-webkit-keyframes #{$name} { @content; }
+      @-moz-keyframes #{$name} { @content; }
+       @-ms-keyframes #{$name} { @content; }
+        @-o-keyframes #{$name} { @content; }
+           @keyframes #{$name} { @content; }
+}
+
+@mixin transition($ani...) {
+   -webkit-transition: $ani;
+      -moz-transition: $ani;
+       -ms-transition: $ani;
+        -o-transition: $ani;
+           transition: $ani;
+}
+
+
+/* 3D-dom manipulation
+ */
+
+// How many pixels away from the viewport a 3D DOM-element should be placed
+@mixin perspective($val: none) {
+   -webkit-perspective: $val;
+      -moz-perspective: $val;
+       -ms-perspective: $val;
+           perspective: $val;
+}
+
+// Specifies where a 3D element is based in the x and y-axis
+// Remember: it is the child elements that are positioned
+@mixin perspective-origin($val: 50% 50%) {
+   -webkit-perspective-origin: $val;
+      -moz-perspective-origin: $val;
+       -ms-perspective-origin: $val;
+           perspective-origin: $val;
+}
+
+// For applying a 2D or 3D transformation onto an DOM-element
+@mixin transform($val: none) {
+   -webkit-transform: $val;
+      -moz-transform: $val;
+       -ms-transform: $val;
+           transform: $val;
+}
+
+// Specifies the position of transformed element
+@mixin transform-origin($val: 50% 50% 0) {
+   -webkit-transform-origin: $val;
+      -moz-transform-origin: $val;
+       -ms-transform-origin: $val;
+           transform-origin: $val;
+}
+
+// Specifies how nested element of a parent are rendered in 3D-space
+@mixin transform-style($val: flat) {
+   -webkit-transform-style: $val;
+      -moz-transform-style: $val;
+       -ms-transform-style: $val;
+           transform-style: $val;
+}
+
+
+/* Parallax Scrolling
+ */
+
+// For making a container of parallax content
+// $element The element to use as a container
+// $width The width of the container
+// $height The height of the container
+// $perspective Can use the global variable $parallax-perspective for simplicity
+@mixin parallax($element, $width, $height, $perspective: 1px) {
+   $parallax-perspective: null !default;
+   @if $parallax-perspective != null { $perspective: $parallax-perspective }
+   
+   @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+      html, body {
+         overflow: hidden;
+         height: 100%;
+      }
+      body { @include transform(translateZ(0px)); } /* Fix paint issues in Edge & Safari */
+      
+      .#{$element} {
+         width: $width;
+         height: $height;
+         position: absolute;
+         overflow-x: hidden;
+         overflow-y: auto;
+         @include perspective($perspective);
+         scroll-behavior: smooth;
+         
+         * { @include transform-style(preserve-3d); }
+      }
+      
+      @content;
+   }
+}
+
+// To be called by children of parallax-container for their parallaxyness
+// $perspective Can use the global variable $parallax-perspective for simplicity
+@mixin parallax-transform($distance: 0, $perspective: 1px) {
+   $parallax-perspective: null !default;
+   @if $parallax-perspective != null { $perspective: $parallax-perspective }
+   @include transform(translateZ($distance * $perspective) scale(abs(1 - $distance)));
 }
