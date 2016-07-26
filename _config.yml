@@ -75,11 +75,25 @@ kramdown:
 # Stylesheets
 sass:
   style: compressed
-      
+
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: page
+
 # Plugins
 gems:
   - jekyll-paginate
-  
+
 # Plugin: Paginate
 paginate: 5
 paginate_path: /blog/page-:num/
