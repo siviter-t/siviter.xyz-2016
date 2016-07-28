@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mouse Keys in Ubuntu 12.04
+author: Taylor Siviter
 categories: ubuntu
 ---
 

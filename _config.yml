@@ -7,7 +7,9 @@
 
 # Site settings
 title: Taylor Siviter
+author: Taylor Siviter
 domain_name: siviter.xyz
+tagline: Physicist, Programmer, Student
 description: >
   Physicist, Programmer, Student
 url: "http://siviter.xyz" # the base hostname & protocol for your site
@@ -93,6 +95,7 @@ defaults:
 # Plugins
 gems:
   - jekyll-paginate
+  - jekyll-seo-tag
 
 # Plugin: Paginate
 paginate: 5
