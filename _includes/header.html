@@ -6,7 +6,7 @@
     <div id="menu">
       {% for my_page in site.pages %}
         {% if my_page.title %}
-          {% unless my_page.url contains 'blog/page-' %}
+          {% unless my_page.url contains '/page-' or my_page.url contains '404.html' %}
             <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">
               {{ my_page.title }}
             </a>
