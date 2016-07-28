@@ -3,207 +3,207 @@
  */
 // Default column style
 %page-column {
-	min-height: 100vh;
-	display: block;
-	margin: 0;
+  min-height: 100vh;
+  display: block;
+  margin: 0;
 }
 
 // For overlaying stuff in a DOM-element (remember z-index)
 %dom-layer {
-    width: 100%;
-    height: 100%;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 /*
  * Left-most side column for meta descriptions etc.
  */
 #side-column { @extend %page-column;
-	width: 40%;
-	height: 100vh;
-	max-height: 100vh;
-	position: fixed;
+  width: 40%;
+  height: 100vh;
+  max-height: 100vh;
+  position: fixed;
     
-    // For placing stuff under the canvas
-    #underlay { @extend %dom-layer;
-        z-index: 1;
-        background: $brand-color-light;
+  // For placing stuff under the canvas
+  #underlay { @extend %dom-layer;
+    z-index: 1;
+    background: $brand-color-light;
+  }
+  
+  // Canvas for particle effects
+  #canvas-enclosure { @extend %dom-layer;
+    z-index: 2;
+    background-color: #000;
+    @include opacity(0.75);
+  }
+  
+  // Overlay for header, menus, descriptions, etc.
+  #overlay { @extend %dom-layer;
+    z-index: 3; 
+    line-height: 56px;
+    text-align: center;
+    color: $brand-color-light;
+    a, p { margin: 0; }
+  }
+  
+  #left-panel { @extend %dom-layer;
+    z-index: 4;
+    height: auto;
+    top: 30%;
+  }
+  
+  #site-title {
+    font-size: 34px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    border-bottom: 1px solid $brand-color;
+    padding-bottom: 6px;
+    color: $brand-color-light;
+    &:hover { color: $hover-colour; }
+  }
+  
+  // Go full-width if it is the home page
+  @at-root &.home {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    #scroll-arrow {
+      display: none; 
+      @include media-query($phone) { display: none; }
     }
-    
-    // Canvas for particle effects
-    #canvas-enclosure { @extend %dom-layer;
-        z-index: 2;
-        background-color: #000;
-        @include opacity(0.75);
-    }
-    
-    // Overlay for header, menus, descriptions, etc.
-    #overlay { @extend %dom-layer;
-        z-index: 3; 
-        line-height: 56px;
-        text-align: center;
-        color: $brand-color-light;
-        a, p { margin: 0; }
-    }
-    
-    #left-panel { @extend %dom-layer;
-        z-index: 4;
-        height: auto;
-        top: 30%;
-    }
-    
-    #site-title {
-        font-size: 34px;
-        font-weight: 300;
-        letter-spacing: -1px;
-        border-bottom: 1px solid $brand-color;
-        padding-bottom: 6px;
-        color: $brand-color-light;
-        &:hover { color: $hover-colour; }
-    }
-    
-    // Go full-width if it is the home page
-    @at-root &.home {
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        #scroll-arrow {
-            display: none; 
-            @include media-query($phone) { display: none; }
-        }
-    }
-    
-	@include media-query($phone) {
-	    width: 100%;
-	    position: relative;
-	}
+  }
+   
+  @include media-query($phone) {
+    width: 100%;
+    position: relative;
+  }
 }
 
 // Social media list
 .contact-list, .site-social-media {
-    list-style: none;
-    margin-left: 0;
-    li {
-        display: inline;
-        margin: 0 4px;
-    }
+  list-style: none;
+  margin-left: 0;
+  li {
+    display: inline;
+    margin: 0 4px;
+  }
 }
 
 // Site header - contains menu
 #site-header {
-    z-index: 5;
-    width: 100%;
-    height: 56px;
-    min-height: 56px;
-    position: relative;
-    @include media-query($phone) { position: fixed; }
+  z-index: 5;
+  width: 100%;
+  height: 56px;
+  min-height: 56px;
+  position: relative;
+  @include media-query($phone) { position: fixed; }
 }
 
 #site-nav {
-    height: 56px;
-    line-height: 56px;
-    margin: 0 $spacing-unit 0;
-    border-bottom: 1px solid $brand-color;
-    position: relative;
-    .menu-icon { display: none; }
-    #menu { 
-        height: 48px;
-        line-height: 48px;
-        position: absolute;
-        bottom: 0;
-        right: 0;
+  height: 56px;
+  line-height: 56px;
+  margin: 0 $spacing-unit 0;
+  border-bottom: 1px solid $brand-color;
+  position: relative;
+  .menu-icon { display: none; }
+  #menu { 
+    height: 48px;
+    line-height: 48px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .page-link {
+    line-height: 31px;
+    height: 31px;
+    padding: 0 10px;
+    display: inline-block;
+    vertical-align: bottom;
+    border-top: 3px solid $brand-color;
+    color: $brand-color-light;
+    &:hover {
+      line-height: 45px;
+      height: 45px;
+      color: $hover-colour;
+      background-color: $brand-color;
+      border-top: 3px solid $hover-colour;
     }
-    .page-link {
-        line-height: 31px;
-        height: 31px;
-        padding: 0 10px;
-        display: inline-block;
-        vertical-align: bottom;
-        border-top: 3px solid $brand-color;
-        color: $brand-color-light;
-        &:hover {
-            line-height: 45px;
-            height: 45px;
-            color: $hover-colour;
-            background-color: $brand-color;
-            border-top: 3px solid $hover-colour;
-        }
-        &:not(:last-child) { margin-right: 5px; }
-        @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
-                            color 0.5s, border 1s);
-        @at-root &.active { border-top: 3px solid $hover-colour; }
+    &:not(:last-child) { margin-right: 5px; }
+    @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
+                        color 0.5s, border 1s);
+    @at-root &.active { border-top: 3px solid $hover-colour; }
+  }
+  
+  @include media-query($tablet) {
+    height: auto;
+    margin: 0;
+    top: 9px;
+    right: 9px;
+    position: absolute;
+    text-align: right;
+    border-radius: 9px 0;
+    border: 1px solid $brand-color;
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 32px;
+      height: 32px;
+      line-height: 0;
+      padding: 4px;
+    }
+
+    #menu {
+      height: auto;
+      line-height: $base-line-height;
+      position: relative;
+      clear: both;
+      display: none;
+    }
+
+    &:hover {
+      #menu { display: block; }
+      background-color: $brand-color-dark;
     }
     
-    @include media-query($tablet) {
+    .page-link {
+      line-height: $base-line-height;
+      height: auto;
+      display: block;
+      padding: 10px 10px;
+      vertical-align: baseline;
+      &:hover {
+        line-height: $base-line-height;
         height: auto;
-        margin: 0;
-        top: 9px;
-        right: 9px;
-        position: absolute;
-        text-align: right;
-        border-radius: 9px 0;
-        border: 1px solid $brand-color;
-        .menu-icon {
-            display: block;
-            float: right;
-            width: 32px;
-            height: 32px;
-            line-height: 0;
-            padding: 4px;
-        }
-
-        #menu {
-            height: auto;
-            line-height: $base-line-height;
-            position: relative;
-            clear: both;
-            display: none;
-        }
-
-        &:hover {
-            #menu { display: block; }
-            background-color: $brand-color-dark;
-        }
-        
-        .page-link {
-            line-height: $base-line-height;
-            height: auto;
-            display: block;
-            padding: 10px 10px;
-            vertical-align: baseline;
-            &:hover {
-                line-height: $base-line-height;
-                height: auto;
-                color: $hover-colour;
-                background-color: $brand-color;
-                border-top: 3px solid $hover-colour;
-            }
-            &:not(:last-child) { margin-right: 0; }
-            @include transition(background-color 0.25s, color 0.125s, border 0.25s);
-        }
-        
-        // Change the site-nav colour when the page is scrolled down far enough on mobile
-        @at-root &.nav-fix { background-color: $brand-color-dark; }
+        color: $hover-colour;
+        background-color: $brand-color;
+        border-top: 3px solid $hover-colour;
+      }
+      &:not(:last-child) { margin-right: 0; }
+      @include transition(background-color 0.25s, color 0.125s, border 0.25s);
     }
+
+    // Change the site-nav colour when the page is scrolled down far enough on mobile
+    @at-root &.nav-fix { background-color: $brand-color-dark; }
+  }
 }
 
 // Right-most column for content
 #content-column { @extend %page-column;
-	width: 60%;
-	float: right;
-	@include media-query($phone) {
-	    width: 100%;
-	    float: left;
-	}
+  width: 60%;
+  float: right;
+  @include media-query($phone) {
+      width: 100%;
+      float: left;
+  }
 }
 
 //Page content
 .page-content {
-    padding: $spacing-unit 0;
+  padding: $spacing-unit 0;
 }
 
 .page-heading {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .post-list {
@@ -211,56 +211,56 @@
 }
 
 .post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
+  font-size: $small-font-size;
+  color: $grey-color;
 }
 
 .post-link {
-    display: block;
-    font-size: 24px;
+  display: block;
+  font-size: 24px;
 }
 
 // Posts
 .post-header {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 }
 
 .post-title {
-    font-size: 42px;
-    letter-spacing: -1px;
-    line-height: 1;
+  font-size: 42px;
+  letter-spacing: -1px;
+  line-height: 1;
 
-    @include media-query($tablet) {
-        font-size: 36px;
-    }
+  @include media-query($tablet) {
+    font-size: 36px;
+  }
 }
 
 .post-content {
-    margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit;
 
-    h2 {
-        font-size: 32px;
+  h2 {
+    font-size: 32px;
 
-        @include media-query($tablet) {
-            font-size: 28px;
-        }
+    @include media-query($tablet) {
+      font-size: 28px;
     }
+  }
 
-    h3 {
-        font-size: 26px;
+  h3 {
+    font-size: 26px;
 
-        @include media-query($tablet) {
-            font-size: 22px;
-        }
+    @include media-query($tablet) {
+      font-size: 22px;
     }
+  }
 
-    h4 {
-        font-size: 20px;
+  h4 {
+    font-size: 20px;
 
-        @include media-query($tablet) {
-            font-size: 18px;
-        }
+    @include media-query($tablet) {
+      font-size: 18px;
     }
+  }
 }
 
 /*
@@ -269,52 +269,50 @@
 
 #blog-heading { display: inline; }
 
-#blog-rss
-{
-    display: inline-block;
-    vertical-align: text-bottom;
-    margin-left: 6px;
+#blog-rss {
+  display: inline-block;
+  vertical-align: text-bottom;
+  margin-left: 6px;
 }
 
-#post-list
-{
-    margin-left: 0;
-    list-style: none;
-    > li { margin-bottom: $spacing-unit; }
-    
-    .blog-meta {
-        width: auto;
-        min-width: 50%;
-        color: $brand-color-light;
-        background-color: $brand-color-dark;
-        border-top: 3px solid $brand-color;
-        border-radius: 0 9px 0 0;
-        display: inline-block;
-        text-align: right;
-        .wrapper { padding-bottom: 8px; }
-        span { color: $brand-color-light; }
-        &:hover {
-            min-width: 100%;
-            border-radius: 0;
-            border-top: 3px solid $hover-colour;
-            background-color: $brand-color;
-            .post-link { color: $hover-colour; }
-        }
-        @include transition(min-width 1s, background-color 1s, color 0.5s, border 0.5s,
-                            border-radius 1s);
+#post-list {
+  margin-left: 0;
+  list-style: none;
+  > li { margin-bottom: $spacing-unit; }
+  
+  .blog-meta {
+    width: auto;
+    min-width: 50%;
+    color: $brand-color-light;
+    background-color: $brand-color-dark;
+    border-top: 3px solid $brand-color;
+    border-radius: 0 9px 0 0;
+    display: inline-block;
+    text-align: right;
+    .wrapper { padding-bottom: 8px; }
+    span { color: $brand-color-light; }
+    &:hover {
+      min-width: 100%;
+      border-radius: 0;
+      border-top: 3px solid $hover-colour;
+      background-color: $brand-color;
+      .post-link { color: $hover-colour; }
     }
-    
-    .blog-excerpt {
-        width: 100%;
-        background-color: #fff;
-        .wrapper { padding-top: 8px; }
-    }
+    @include transition(min-width 1s, background-color 1s, color 0.5s, border 0.5s,
+                        border-radius 1s);
+  }
+  
+  .blog-excerpt {
+    width: 100%;
+    background-color: #fff;
+    .wrapper { padding-top: 8px; }
+  }
 }
 
 #pagination {
-    width: 100%;
-    display: inline-block;
-    #previous { float: left; }
-    #next { float: right; }
-    a:hover { > span { > svg { polygon { fill: $hover-colour; } } } }
+  width: 100%;
+  display: inline-block;
+  #previous { float: left; }
+  #next { float: right; }
+  a:hover { > span { > svg { polygon { fill: $hover-colour; } } } }
 }
