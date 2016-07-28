@@ -122,22 +122,23 @@
  */
 
 // For making a container of parallax content
-// $element The element to use as a container
+// $parent The parent element of the container e.g. body
+// $element The element to use as a container - remember id-selectors for this and $parent
 // $width The width of the container
 // $height The height of the container
 // $perspective Can use the global variable $parallax-perspective for simplicity
-@mixin parallax($element, $width, $height, $perspective: 1px) {
+@mixin parallax($parent, $element, $width, $height, $perspective: 1px) {
   $parallax-perspective: null !default;
   @if $parallax-perspective != null { $perspective: $parallax-perspective }
  
   @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
-    html, body {
-      overflow: hidden;
+    #{$parent} {
       height: 100%;
+      overflow: hidden;
+      @include transform(translateZ(0px));
     }
-    body { @include transform(translateZ(0px)); } /* Fix paint issues in Edge & Safari */
       
-    .#{$element} {
+    #{$element} {
       width: $width;
       height: $height;
       position: absolute;
