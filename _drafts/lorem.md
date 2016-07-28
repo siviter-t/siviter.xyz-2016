@@ -3,6 +3,7 @@ layout: post
 title: Lorem ipsum!
 categories: test
 permalink: /testpost/
+sitemap: false
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sit amet congue enim, nec

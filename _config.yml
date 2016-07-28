@@ -94,8 +94,9 @@ defaults:
 
 # Plugins
 gems:
-  - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
 
 # Plugin: Paginate
 paginate: 5
