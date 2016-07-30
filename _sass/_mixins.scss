@@ -6,6 +6,11 @@
 /* Common Stuff
  */
 
+@mixin size($width: 0, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
 @mixin border-radius($val: 0) {
   -webkit-border-radius: $val;
      -moz-border-radius: $val;
