@@ -30,6 +30,10 @@ $tablet: 800px;
 
 $icon-size: 32px;
 $arrow-size: 48px;
+$big-icon-size: 64px;
+
+// Parallax globals
+$parallax-perspective: 300px;
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
@@ -37,4 +41,5 @@ $arrow-size: 48px;
         "base",
         "layout",
         "graphics",
-        "syntax";
+        "syntax",
+        "portfolio";

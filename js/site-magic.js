@@ -23,7 +23,7 @@ function buttonTriggers()
   $('#menu').find('a[href="/' + getTopLevelPathname() + '/"]').addClass('active')
   
   /// Scroll the page down for mobile users on down arrow click/touch
-  $('#scroll-arrow').on('click touch', function ()
+  $('#scroll-mobile').on('click touch', function ()
   {
     $('html, body').animate({ scrollTop: $(window).innerHeight() }, 1250);
   });
