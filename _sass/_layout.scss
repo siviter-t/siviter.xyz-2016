@@ -3,7 +3,7 @@
  */
 // Default column style
 %page-column {
-  min-height: 100vh;
+  min-height: 100%;
   display: block;
   margin: 0;
 }
@@ -20,8 +20,7 @@
  */
 #side-column { @extend %page-column;
   width: 40%;
-  height: 100vh;
-  max-height: 100vh;
+  height: 100%;
   position: fixed;
     
   // For placing stuff under the canvas
