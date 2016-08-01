@@ -30,12 +30,12 @@ pre {
   background-color: $code-bg;
   color: $body-col;
   border-radius: 8px;
-  @include box-shadow(3px 3px 8px 0 $brand-color-dark);
+  @include box-shadow(3px 3px 8px 0 $brand-colour-dark);
   margin-bottom: $spacing-unit / 2 + 3px; // Compensating for the box-shadow
     
   > pre { padding: 0; }
     .gutter {
-      border-right: 1px solid $bg-color;
+      border-right: 1px solid $bg-colour;
       color: $base01;
       .lineno { @include selectability(none); }
     }

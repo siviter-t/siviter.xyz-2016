@@ -16,8 +16,8 @@ dl, dd, ol, ul, figure {
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-  color: $text-color;
-  background-color: $bg-color;
+  color: $text-colour;
+  background-color: $bg-colour;
   -webkit-text-size-adjust: 100%;
   -webkit-font-feature-settings: "kern" 1;
   -moz-font-feature-settings: "kern" 1;
@@ -70,9 +70,9 @@ h1, h2, h3, h4, h5, h6 { font-weight: $base-font-weight; }
  * Links
  */
 a {
-  color: $brand-color;
+  color: $brand-colour;
   text-decoration: none;
-  &:visited { color: darken($brand-color, 15%); }
+  &:visited { color: darken($brand-colour, 15%); }
   &:hover { color: $hover-colour; }
   @include transition(color 1s);
 }
@@ -82,8 +82,8 @@ a {
  * Blockquotes
  */
 blockquote {
-  color: $grey-color;
-  border-left: 4px solid $grey-color-light;
+  color: $grey-colour;
+  border-left: 4px solid $grey-colour-light;
   padding-left: $spacing-unit / 2;
   font-size: 18px;
   letter-spacing: -1px;
@@ -93,7 +93,7 @@ blockquote {
 }
 
 // Horizontal rule
-hr { border-top: 2px solid $brand-color; }
+hr { border-top: 2px solid $brand-colour; }
 
 /*
  * Wrapper
@@ -117,6 +117,7 @@ hr { border-top: 2px solid $brand-color; }
 
 /*
  * Clearfix
+ * IE<8
  */
 %clearfix {
   &:after {
@@ -132,9 +133,9 @@ hr { border-top: 2px solid $brand-color; }
 ::-webkit-scrollbar {
 	width: 4px;
 	height: 4px;
-	background: $brand-color-light;
+	background: $brand-colour-light;
 }
 
-::-webkit-scrollbar-track { background: $brand-color-light; }
-::-webkit-scrollbar-thumb { background: $brand-color-dark; }
-::-webkit-scrollbar-corner { background: $brand-color-dark; }
+::-webkit-scrollbar-track { background: $brand-colour-light; }
+::-webkit-scrollbar-thumb { background: $brand-colour-dark; }
+::-webkit-scrollbar-corner { background: $brand-colour-dark; }

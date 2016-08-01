@@ -36,7 +36,7 @@ html, body {
   #underlay {
     @extend %dom-layer;
     z-index: 1;
-    background: $brand-color-light;
+    background: $brand-colour-light;
   }
   
   // Canvas for particle effects
@@ -53,7 +53,7 @@ html, body {
     z-index: 3; 
     line-height: 56px;
     text-align: center;
-    color: $brand-color-light;
+    color: $brand-colour-light;
     a, p { margin: 0; }
   }
   
@@ -68,9 +68,9 @@ html, body {
     font-size: 34px;
     font-weight: 300;
     letter-spacing: -1px;
-    border-bottom: 1px solid $brand-color;
+    border-bottom: 1px solid $brand-colour;
     padding-bottom: 6px;
-    color: $brand-color-light;
+    color: $brand-colour-light;
     &:hover { color: $hover-colour; }
   }
   
@@ -115,7 +115,7 @@ html, body {
   height: 56px;
   line-height: 56px;
   margin: 0 $spacing-unit 0;
-  border-bottom: 1px solid $brand-color;
+  border-bottom: 1px solid $brand-colour;
   position: relative;
   .menu-icon { display: none; }
   #menu { 
@@ -131,13 +131,13 @@ html, body {
     padding: 0 10px;
     display: inline-block;
     vertical-align: bottom;
-    border-top: 3px solid $brand-color;
-    color: $brand-color-light;
+    border-top: 3px solid $brand-colour;
+    color: $brand-colour-light;
     &:hover {
       line-height: 45px;
       height: 45px;
       color: $hover-colour;
-      background-color: $brand-color;
+      background-color: $brand-colour;
       border-top: 3px solid $hover-colour;
     }
     &:not(:last-child) { margin-right: 5px; }
@@ -154,7 +154,7 @@ html, body {
     position: absolute;
     text-align: right;
     border-radius: 9px 0;
-    border: 1px solid $brand-color;
+    border: 1px solid $brand-colour;
     .menu-icon {
       display: block;
       float: right;
@@ -174,7 +174,7 @@ html, body {
 
     &:hover {
       #menu { display: block; }
-      background-color: $brand-color-dark;
+      background-color: $brand-colour-dark;
     }
     
     .page-link {
@@ -187,7 +187,7 @@ html, body {
         line-height: $base-line-height;
         height: auto;
         color: $hover-colour;
-        background-color: $brand-color;
+        background-color: $brand-colour;
         border-top: 3px solid $hover-colour;
       }
       &:not(:last-child) { margin-right: 0; }
@@ -195,7 +195,7 @@ html, body {
     }
 
     // Change the site-nav colour when the page is scrolled down far enough on mobile
-    @at-root &.nav-fix { background-color: $brand-color-dark; }
+    @at-root &.nav-fix { background-color: $brand-colour-dark; }
   }
 }
 
@@ -217,115 +217,4 @@ html, body {
 
 .page-heading {
   font-size: 20px;
-}
-
-.post-list {
-    
-}
-
-.post-meta {
-  font-size: $small-font-size;
-  color: $grey-color;
-}
-
-.post-link {
-  display: block;
-  font-size: 24px;
-}
-
-// Posts
-.post-header {
-  margin-bottom: $spacing-unit;
-}
-
-.post-title {
-  font-size: 42px;
-  letter-spacing: -1px;
-  line-height: 1;
-
-  @include media-query($tablet) {
-    font-size: 36px;
-  }
-}
-
-.post-content {
-  margin-bottom: $spacing-unit;
-
-  h2 {
-    font-size: 32px;
-
-    @include media-query($tablet) {
-      font-size: 28px;
-    }
-  }
-
-  h3 {
-    font-size: 26px;
-
-    @include media-query($tablet) {
-      font-size: 22px;
-    }
-  }
-
-  h4 {
-    font-size: 20px;
-
-    @include media-query($tablet) {
-      font-size: 18px;
-    }
-  }
-}
-
-/*
- * Blog-page specifics
- */
-
-#blog-heading { display: inline; }
-
-#blog-rss {
-  display: inline-block;
-  vertical-align: text-bottom;
-  margin-left: 6px;
-}
-
-#post-list {
-  margin-left: 0;
-  list-style: none;
-  > li { margin-bottom: $spacing-unit; }
-  
-  .blog-meta {
-    width: auto;
-    min-width: 50%;
-    color: $brand-color-light;
-    background-color: $brand-color-dark;
-    border-top: 3px solid $brand-color;
-    border-radius: 0 9px 0 0;
-    display: inline-block;
-    text-align: right;
-    .wrapper { padding-bottom: 8px; }
-    span { color: $brand-color-light; }
-    &:hover {
-      min-width: 100%;
-      border-radius: 0;
-      border-top: 3px solid $hover-colour;
-      background-color: $brand-color;
-      .post-link { color: $hover-colour; }
-    }
-    @include transition(min-width 1s, background-color 1s, color 0.5s, border 0.5s,
-                        border-radius 1s);
-  }
-  
-  .blog-excerpt {
-    width: 100%;
-    background-color: #fff;
-    .wrapper { padding-top: 8px; }
-  }
-}
-
-#pagination {
-  width: 100%;
-  display: inline-block;
-  #previous { float: left; }
-  #next { float: right; }
-  a:hover { > span { > svg { polygon { fill: $hover-colour; } } } }
 }

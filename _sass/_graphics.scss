@@ -18,7 +18,7 @@
   > svg {
     @include size($icon-size);
     path {
-      fill: $brand-color-light;
+      fill: $brand-colour-light;
       @include transition(fill 1s);
     }
   }
@@ -28,7 +28,7 @@
 // Darker varients
 .icon-dark {
   @extend .icon;
-  > svg { path { fill: $brand-color; } }
+  > svg { path { fill: $brand-colour; } }
 }
 
 // Mountain svg
@@ -47,7 +47,7 @@
   > svg {
     @include size($arrow-size);
     polygon {
-      fill: $brand-color-light;
+      fill: $brand-colour-light;
       @include transition(fill 1s);
     }
   }
@@ -57,7 +57,7 @@
 // Darker varients
 .arrow-dark {
   @extend .arrow;
-  > svg { polygon { fill: $brand-color; } }
+  > svg { polygon { fill: $brand-colour; } }
 }
 
 // Scroll arrow
@@ -94,7 +94,7 @@
   @include size($big-icon-size);
   bottom: $spacing-unit;
   margin-left: -$big-icon-size / 2;
-  color: $brand-color-dark;
+  color: $brand-colour-dark;
   text-align: center;
   > svg { 
     @include size($big-icon-size); 
@@ -105,5 +105,5 @@
     margin-left: -$arrow-size / 2;
     > svg { @include size($arrow-size); }
   }
-  &:hover { > svg { polygon { fill: $brand-color; } } }
+  &:hover { > svg { polygon { fill: $brand-colour; } } }
 }

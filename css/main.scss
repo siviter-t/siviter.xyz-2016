@@ -11,23 +11,23 @@ $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$bg-color: #F5F5F5;
-$text-color: #111111;
+// Colours
+$bg-colour: #F5F5F5;
+$text-colour: #111111;
 $hover-colour: #86CC00;
-$brand-color-light: #E9EBE3;
-$brand-color: #757672; // Sidebar colour with overlay at 0.5 opacity
-$brand-color-dark: #3A3B39; // Sidebar colour with overlay at 0.75 opacity 
+$brand-colour-light: #E9EBE3;
+$brand-colour: #757672; // Sidebar colour with overlay at 0.5 opacity
+$brand-colour-dark: #3A3B39; // Sidebar colour with overlay at 0.75 opacity 
+$grey-colour: #828282;
+$grey-colour-light: lighten($grey-colour, 40%);
+$grey-colour-dark: darken($grey-colour, 25%);
 
-$grey-color: #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark: darken($grey-color, 25%);
-
-// Width of the content area
+// Content widths
 $content-width: 800px;
-
 $phone: 600px;
 $tablet: 800px;
 
+// Misc Sizes
 $icon-size: 32px;
 $arrow-size: 48px;
 $big-icon-size: 64px;
@@ -35,11 +35,7 @@ $big-icon-size: 64px;
 // Parallax globals
 $parallax-perspective: 300px;
 
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "mixins",
-        "base",
-        "layout",
-        "graphics",
-        "syntax",
-        "portfolio";
+// Import partials from 'sass_dir'
+@import "mixins",
+        "base", "layout", "blog", "portfolio",
+        "graphics", "syntax";
