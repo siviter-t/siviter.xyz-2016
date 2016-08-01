@@ -1,8 +1,10 @@
 /*
  * Site 'two-column' styled layout
  */
-// Default column style
+
+// Default page column style
 %page-column {
+  @extend %clearfix;
   min-height: 100%;
   display: block;
   margin: 0;
@@ -15,29 +17,39 @@
   position: absolute;
 }
 
-/*
- * Left-most side column for meta descriptions etc.
- */
-#side-column { @extend %page-column;
+// Nice full windowness
+html, body {
+  @extend %clearfix;
+  width: 100%;
+  height: 100%;
+}
+
+// Left-most side column for meta descriptions etc.
+#side-column {
+  @extend %page-column;
   width: 40%;
   height: 100%;
   position: fixed;
-    
+  float: left;
+  
   // For placing stuff under the canvas
-  #underlay { @extend %dom-layer;
+  #underlay {
+    @extend %dom-layer;
     z-index: 1;
     background: $brand-color-light;
   }
   
   // Canvas for particle effects
-  #canvas-enclosure { @extend %dom-layer;
+  #canvas-enclosure {
+    @extend %dom-layer;
     z-index: 2;
     background-color: #000;
     @include opacity(0.75);
   }
   
   // Overlay for header, menus, descriptions, etc.
-  #overlay { @extend %dom-layer;
+  #overlay {
+    @extend %dom-layer;
     z-index: 3; 
     line-height: 56px;
     text-align: center;
@@ -45,7 +57,8 @@
     a, p { margin: 0; }
   }
   
-  #left-panel { @extend %dom-layer;
+  #left-panel {
+    @extend %dom-layer;
     z-index: 4;
     height: auto;
     top: 30%;
@@ -187,7 +200,8 @@
 }
 
 // Right-most column for content
-#content-column { @extend %page-column;
+#content-column {
+  @extend %page-column;
   width: 60%;
   float: right;
   @include media-query($phone) {
