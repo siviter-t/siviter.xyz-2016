@@ -139,7 +139,8 @@
   @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
     #{$parent} {
       height: 100%;
-      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: auto;
       @include transform(translateZ(0px));
     }
       
