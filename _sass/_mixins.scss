@@ -33,9 +33,16 @@
 /* MQM - Media Queries and Miscellaneous
  */
 
-// Screen.width dependent styles 
+// Screen.max-width dependent styles 
 @mixin media-query($device) {
   @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+// Screen.min-width dependent styles 
+@mixin media-query-min($device) {
+  @media screen and (min-width: $device) {
     @content;
   }
 }
