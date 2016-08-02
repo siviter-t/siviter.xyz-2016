@@ -9,6 +9,7 @@
   bottom: 9px;
   position: fixed;
   text-align: right;
+  text-transform: capitalize;
   background: $brand-colour-dark;
   @include border-radius(9px 0 0 9px);
   @include opacity(0.85);
