@@ -168,9 +168,11 @@
 }
 
 // To be called by children of parallax-container for their parallaxyness
+// $distance Distance to offset the element. Higher values = quicker scroll
+// $val Any other transformations to apply onto the element
 // $perspective Can use the global variable $parallax-perspective for simplicity
-@mixin parallax-transform($distance: 0, $perspective: 1px) {
+@mixin parallax-transform($distance: 0, $val: null, $perspective: 1px) {
   $parallax-perspective: null !default;
   @if $parallax-perspective != null { $perspective: $parallax-perspective }
-  @include transform(translateZ($distance * $perspective) scale(abs(1 - $distance)));
+  @include transform(translateZ($distance * $perspective) scale(abs(1 - $distance)) $val);
 }
