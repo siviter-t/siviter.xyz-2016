@@ -57,6 +57,18 @@
 }
 
 
+/* Gradients
+ */
+
+@mixin linear-gradient-ltr($start, $end) {
+  background: $start;
+  background: -webkit-linear-gradient(left, $start, $end);
+  background:    -moz-linear-gradient(right, $start, $end);
+  background:      -o-linear-gradient(right, $start, $end);
+  background:         linear-gradient(to right, $start, $end);
+}
+
+
 /* Animation and Transition
  */
 
