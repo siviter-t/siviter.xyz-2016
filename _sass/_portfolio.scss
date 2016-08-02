@@ -1,40 +1,10 @@
-/*
- * Portfolio-page related stuff
+/* @file _portfolio.scss
+ * @brief Styles for the portfolio collection
+ * @Copyright (c) 2016 Taylor Siviter
  */
 
-// Basic slide navigation
-#portfolio-nav {
-  z-index: 100;
-  right: 0;
-  bottom: 9px;
-  position: fixed;
-  text-align: right;
-  text-transform: capitalize;
-  background: $brand-colour-dark;
-  @include border-radius(9px 0 0 9px);
-  @include opacity(0.85);
-  
-  .slide-link {
-    line-height: 31px;
-    height: 31px;
-    padding: 0 10px;
-    display: block;
-    color: $brand-colour-light;
-    border-top: 3px solid $brand-colour;
-    &:hover {
-      line-height: 45px;
-      height: 45px;
-      color: $hover-colour;
-      background-color: $brand-colour;
-      border-top: 3px solid $hover-colour;
-    }
-    &:first-child { @include border-radius(9px 0 0 0); }
-    &:last-child { @include border-radius(0 0 0 9px); }
-    @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
-                        color 0.5s, border 1s);
-    @include media-query($phone) { display: none; }
-  }
-}
+/* Portfolio-page base layout
+ */
 
 // Slide structure
 .slide {
@@ -159,4 +129,50 @@
     }
     
   }
+}
+
+
+/* Portfolio slide navigation
+ */
+
+#portfolio-nav {
+  z-index: 100;
+  right: 0;
+  bottom: 9px;
+  position: fixed;
+  text-align: right;
+  text-transform: capitalize;
+  background: $brand-colour-dark;
+  @include border-radius(9px 0 0 9px);
+  @include opacity(0.85);
+  
+  .slide-link {
+    line-height: 31px;
+    height: 31px;
+    padding: 0 10px;
+    display: block;
+    color: $brand-colour-light;
+    border-top: 3px solid $brand-colour;
+    &:hover {
+      line-height: 45px;
+      height: 45px;
+      color: $hover-colour;
+      background-color: $brand-colour;
+      border-top: 3px solid $hover-colour;
+    }
+    &:first-child { @include border-radius(9px 0 0 0); }
+    &:last-child { @include border-radius(0 0 0 9px); }
+    @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
+                        color 0.5s, border 1s);
+    @include media-query($phone) { display: none; }
+  }
+}
+
+
+/* Portfolio content
+ */
+
+.portfolio-meta {
+  font-size: $small-font-size;
+  color: $grey-colour;
 }
