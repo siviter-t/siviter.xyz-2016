@@ -91,6 +91,7 @@ defaults:
       type: portfolio
     values:
       layout: page
+      imgpath: /images/portfolio/
 
 # Plugins
 gems:
