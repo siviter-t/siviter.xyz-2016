@@ -46,18 +46,29 @@ permalink: /portfolio/
       <div class="portfolio-content">
         <div class="portfolio-img">
           <img src="{{ item.imgpath | append: item.image | prepend: site.baseurl }}"
-               alt="{{ item.imgalt }}" title="{{ item.imgalt }}">
+               alt="{{ item.img_alt }}" title="{{ item.img_alt }}">
         </div>
         <div class="wrapper">
           <div class="portfolio-text">
-            <h1><a href="{{ item.url | prepend: site.baseurl }}">{{ item.title }}</a></h1>
-            <p class="portfolio-meta">
-              <time datetime="{{ item.date | date_to_xmlschema }}" itemprop="datePublished">
-                {{ item.date | date: "%B %Y" }}
-              </time>
-            </p>
-            <h2>{{ item.tagline }}</h2>
-            <p>{{ item.excerpt }}</p>
+            <a class="portfolio-meta" href="{{ item.url | prepend: site.baseurl }}">
+              <span class="meta-title">{{ item.title }}</span>
+              <span class="meta-more">
+                {% for meta in item.meta %}
+                  {% if meta[0] != "date" %}
+                    <span>{{ meta[1] }}</span>
+                  {% else %}
+                    <time datetime="{{ item.date | date_to_xmlschema }}" itemprop="date">
+                      {{ meta[1] | date: "%B %Y" }}
+                    </time>
+                  {% endif %}
+                  {% if forloop.last == false %}{{ site.item_separator }}{% endif %}
+                {% endfor %}
+              </span>
+            </a>
+            <div class="portfolio-desc">
+              <h2>{{ item.tagline }}</h2>
+              <p>{{ item.excerpt }}</p>
+            </div>
           </div>
         </div>
       </div>
