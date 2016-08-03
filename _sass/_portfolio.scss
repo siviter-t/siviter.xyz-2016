@@ -65,14 +65,13 @@
   @include parallax('#content-column', '.parallax', 100%, 100%) {
     
     .slide {
+      min-height: 100%;
       padding: 0;
       background: $brand-colour-dark;
       background-image: url('/images/textures/t-square.png');
       
       // First introduction slide
       &:first-child {
-        // min-height: 100%;
-        
         .post-header {
           margin-top: $spacing-unit;
           padding-bottom: 2 * $spacing-unit;
@@ -94,7 +93,8 @@
         .portfolio-img {
           @include parallax-transform(0.2);
           @include transform-origin(50% 75%);
-          height: 400px;
+          height: auto;
+          max-height: 33%;
           border-top: 3px solid $brand-colour;
         }
         
@@ -114,13 +114,12 @@
       // Even slides
       &:nth-child(2n) {
         z-index: 1;
-        .portfolio-bg { @include parallax-transform(0.2); }
+        .portfolio-bg { @include parallax-transform(0.1); }
         .portfolio-text { background-image: url('/images/textures/asanoha.png'); }
       }
       
       // Odd slides
       &:nth-child(2n+1):not(:first-child) {
-        .portfolio-bg { @include parallax-transform(0.05); }
         .portfolio-text { background-image: url('/images/textures/sayagata.png'); }
       }
       
