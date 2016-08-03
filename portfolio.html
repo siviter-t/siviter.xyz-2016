@@ -61,7 +61,9 @@ permalink: /portfolio/
                       {{ meta[1] | date: "%B %Y" }}
                     </time>
                   {% endif %}
-                  {% if forloop.last == false %}{{ site.item_separator }}{% endif %}
+                  {% if forloop.last == false %}
+                    <span>{{ site.item_separator }}</span
+                  {% endif %}
                 {% endfor %}
               </span>
             </a>
