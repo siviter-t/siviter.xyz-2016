@@ -73,18 +73,22 @@
       // First introduction slide
       &:first-child {
         .post-header {
-          margin-top: $spacing-unit;
-          padding-bottom: 2 * $spacing-unit;
-        }
-        
-        .portfolio-img {
-          @include parallax-transform(0.4);
-          @include transform-origin(50% 25%);
+          position: relative;
+          top: $spacing-unit;
         }
         
         .portfolio-text {
+          position: relative;
+          top: 7 * $spacing-unit / 2;
           @include parallax-transform(0.3);
           @include transform-origin(50% 100%);
+        }
+        
+        .portfolio-img {
+          position: relative;
+          top: 2 * $spacing-unit;
+          @include parallax-transform(0.4);
+          @include transform-origin(50% 25%);
         }
       }
       
