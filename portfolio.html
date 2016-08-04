@@ -7,10 +7,15 @@ permalink: /portfolio/
 {% assign items = (site.portfolio | sort: 'date') | reverse %}
 
 <nav id="portfolio-nav">
-  <a class="slide-link" href="#portfolio">portfolio</a>
-  {% for item in items %}
-    <a class="slide-link" href="#{{ item.slug }}">{{ item.slug }}</a>
-  {% endfor %}
+  <a href="#" class="icon menu-icon">
+    {% include icons/nav.svg %}
+  </a>
+  <div id="menu">
+    <a class="slide-link" href="#portfolio">portfolio</a>
+    {% for item in items %}
+      <a class="slide-link" href="#{{ item.slug }}">{{ item.slug }}</a>
+    {% endfor %}
+  </div>
 </nav>
 
 <div class="parallax">

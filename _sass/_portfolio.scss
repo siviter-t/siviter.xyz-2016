@@ -193,14 +193,44 @@
 
 #portfolio-nav {
   z-index: 100;
-  right: 0;
-  bottom: 9px;
+  max-width: 40px;
+  max-height: 40px;
+  top: 9px;
+  right: 9px;
   position: fixed;
   text-align: right;
   text-transform: capitalize;
   background: $brand-colour-dark;
-  @include border-radius(9px 0 0 9px);
+  border: 1px solid $brand-colour;
+  @include border-radius(9px 0);
   @include opacity(0.85);
+  
+  .menu-icon {
+    display: block;
+    float: right;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+  }
+    
+  #menu {
+    clear: both;
+    display: block;
+    visibility: hidden;
+    @include opacity(0);
+    @include transition(visibility 0.5s, opacity 0.5s linear);
+  }
+  
+  &:hover {
+    max-width: 100%;
+    max-height: 100%;
+    @include border-radius(9px 0 0 9px);
+    #menu { 
+      visibility: visible; 
+      @include opacity(1);
+    }
+  }
+  @include transition(max-width 1s ease-in-out, max-height 1s linear, border-radius 1s);
   
   .slide-link {
     line-height: 31px;
@@ -216,7 +246,6 @@
       background-color: $brand-colour;
       border-top: 3px solid $hover-colour;
     }
-    &:first-child { @include border-radius(9px 0 0 0); }
     &:last-child { @include border-radius(0 0 0 9px); }
     @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
                         color 0.5s, border 1s);
