@@ -204,6 +204,7 @@
   border: 1px solid $brand-colour;
   @include border-radius(9px 0);
   @include opacity(0.85);
+  @include media-query($phone) { display: none; }
   
   .menu-icon {
     display: block;
@@ -249,6 +250,5 @@
     &:last-child { @include border-radius(0 0 0 9px); }
     @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
                         color 0.5s, border 1s);
-    @include media-query($phone) { display: none; }
   }
 }
