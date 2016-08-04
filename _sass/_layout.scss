@@ -148,13 +148,16 @@ html, body {
   
   @include media-query($tablet) {
     height: auto;
+    max-width: 40px;
+    max-height: 40px;
     margin: 0;
     top: 9px;
     right: 9px;
     position: absolute;
     text-align: right;
-    border-radius: 9px 0;
     border: 1px solid $brand-colour;
+    @include border-radius(9px 0);
+    
     .menu-icon {
       display: block;
       float: right;
@@ -169,13 +172,22 @@ html, body {
       line-height: $base-line-height;
       position: relative;
       clear: both;
-      display: none;
+      visibility: hidden;
+      @include opacity(0);
+      @include transition(visibility 0.5s, opacity 0.5s linear);
     }
 
     &:hover {
-      #menu { display: block; }
+      max-width: 100%;
+      max-height: 1000px; // :(
       background-color: $brand-colour-dark;
+      @include border-radius(9px 0 0 9px);
+      #menu { 
+        visibility: visible; 
+        @include opacity(1);
+      }
     }
+    @include transition(max-width 1s ease-in-out, max-height 1s linear, border-radius 1s);
     
     .page-link {
       line-height: $base-line-height;
