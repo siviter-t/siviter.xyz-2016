@@ -19,6 +19,7 @@
     position: absolute;
     background: $bg-colour;
     background-image: url('/images/textures/sayagata.png');
+    border-top: 3px solid $brand-colour;
   }
   
   .portfolio-text { @extend %vertical-rhythm; }
@@ -26,6 +27,7 @@
   .portfolio-img {
     @extend %vertical-rhythm;
     height: 200px;
+    border-top: 3px solid $brand-colour;
     border-bottom: 3px solid $brand-colour;
     overflow: hidden;
     > img {
@@ -38,7 +40,10 @@
   
   // First introduction slide
   &:first-child {
-    .portfolio-bg { background: $bg-colour; }
+    .portfolio-bg {
+      background: $bg-colour;
+      border-top: none;
+    }
     .portfolio-img {
       height: auto;
       border: none;
@@ -53,15 +58,52 @@
   // Even slides
   &:nth-child(2n) {
     .portfolio-bg {
-      border-top: 3px solid $brand-colour;
-      border-bottom: 3px solid $brand-colour;
       background: $brand-colour-light;
       background-image: url('/images/textures/asanoha.png');
     }
   }
 }
 
-// Parallax effect for suitable width screens
+
+/* Portfolio content
+ */
+
+.meta-title { font-size: 2em; }
+.meta-more {
+  font-size: $small-font-size;
+  color: $grey-colour;
+}
+
+.portfolio-content {
+  width: 100%;
+  height: 100%;
+  .portfolio-meta {
+    padding: 0 $spacing-unit / 2 8px;
+    color: $brand-colour-light;
+    background-color: $brand-colour-dark;
+    border-top: 3px solid $brand-colour;
+    @include border-radius(9px 9px 0 0);
+    display: block;
+    .meta-title { 
+      padding: 3px 0;
+      display: block;
+    }
+    &:hover {
+      background-color: $brand-colour;
+      .meta-title { color: $hover-colour; }
+      .meta-more { color: $brand-colour-light; }
+    }
+    &, * { @include transition(border 1s, background-color 1s, color 1s); }
+    @include media-query($phone) { border-top: 3px solid $brand-colour; }
+  }
+  
+  .portfolio-desc { padding: $spacing-unit / 2; }
+}
+
+
+/* Parallax effect for suitable width screens
+ */
+
 @include media-query-min($tablet) {
   @include parallax('#content-column', '.parallax', 100%, 100%) {
     
@@ -110,7 +152,6 @@
           z-index: 3;
           top: 0;
           height: 40%;
-          border-top: 3px solid $brand-colour;
           @include parallax-transform(0.2);
           @include transform-origin(50% 125%);
         }
@@ -119,27 +160,24 @@
           z-index: 4;
           height: 55%;
           top: 45%;
-          background-color: #fff;
-          border-top: 3px solid $brand-colour;
-          @include border-radius(9px 9px 0 0);
-          background: #fff;
-          &:hover { border-top: 3px solid $hover-colour; }
-          @include transition(border 1s);
+          &:hover { .portfolio-meta { border-top: 3px solid $hover-colour; } }
           @include parallax-transform(0.4);
           @include transform-origin(50% 10%);
         }
+        
+        .portfolio-desc { background: #fff; }
       }
       
       // Even slides
       &:nth-child(2n) {
         z-index: 1;
         .portfolio-bg { @include parallax-transform(0.1); }
-        .portfolio-text { background-image: url('/images/textures/asanoha.png'); }
+        .portfolio-desc { background-image: url('/images/textures/asanoha.png'); }
       }
       
       // Odd slides
       &:nth-child(2n+1):not(:first-child) {
-        .portfolio-text { background-image: url('/images/textures/sayagata.png'); }
+        .portfolio-desc { background-image: url('/images/textures/sayagata.png'); }
       }
       
       // End slide
@@ -184,40 +222,4 @@
                         color 0.5s, border 1s);
     @include media-query($phone) { display: none; }
   }
-}
-
-
-/* Portfolio content
- */
-
-.meta-title { font-size: 2em; }
-.meta-more {
-  font-size: $small-font-size;
-  color: $grey-colour;
-}
-
-.portfolio-content {
-  width: 100%;
-  height: 100%;
-  .portfolio-meta {
-    padding: 0 $spacing-unit / 2 8px;
-    margin-bottom: $spacing-unit / 2;
-    color: $brand-colour-light;
-    background-color: $brand-colour-dark;
-    @include border-radius(9px 9px 0 0);
-    display: block;
-    .meta-title { 
-      padding: 3px 0;
-      display: block;
-    }
-    &:hover {
-      background-color: $brand-colour;
-      .meta-title { color: $hover-colour; }
-      .meta-more { color: $brand-colour-light; }
-    }
-    &, * { @include transition(background-color 1s, color 1s); }
-    @include media-query($phone) { border-top: 3px solid $brand-colour; }
-  }
-  
-  .portfolio-desc { padding: 0 $spacing-unit / 2; }
 }
