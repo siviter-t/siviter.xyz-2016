@@ -1,0 +1,33 @@
+/* Site-wide style settings and variables
+ */
+
+$base-font-family: 'Titillium Web', sans-serif;
+$base-font-size:   16px;
+$base-font-weight: 400;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+$spacing-unit:     30px;
+
+// Colours
+$bg-colour: #F5F5F5;
+$text-colour: #111111;
+$hover-colour: #86CC00;
+$brand-colour-light: #E9EBE3;
+$brand-colour: #757672; // Sidebar colour with overlay at 0.5 opacity
+$brand-colour-dark: #3A3B39; // Sidebar colour with overlay at 0.75 opacity 
+$grey-colour: #828282;
+$grey-colour-light: lighten($grey-colour, 40%);
+$grey-colour-dark: darken($grey-colour, 25%);
+
+// Content widths
+$content-width: 800px;
+$phone: 600px;
+$tablet: 800px;
+
+// Misc Sizes
+$icon-size: 32px;
+$arrow-size: 48px;
+$big-icon-size: 64px;
+
+// Parallax globals
+$parallax-perspective: 400px;
