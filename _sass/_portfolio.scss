@@ -6,6 +6,20 @@
 /* Portfolio-page base layout
  */
 
+// Portfolio img general
+.portfolio-img {
+  @extend %vertical-rhythm;
+  border-top: 3px solid $brand-colour;
+  border-bottom: 3px solid $brand-colour;
+  overflow: hidden;
+  > img {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: block;
+  }
+}
+
 // Slide structure
 .slide {
   min-height: 75%;
@@ -24,19 +38,7 @@
   
   .portfolio-text { @extend %vertical-rhythm; }
   
-  .portfolio-img {
-    @extend %vertical-rhythm;
-    height: 200px;
-    border-top: 3px solid $brand-colour;
-    border-bottom: 3px solid $brand-colour;
-    overflow: hidden;
-    > img {
-      width: 100%;
-      height: 100%;
-      margin: auto;
-      display: block;
-    }
-  }
+  .portfolio-img { height: 200px; }
   
   // First introduction slide
   &:first-child {

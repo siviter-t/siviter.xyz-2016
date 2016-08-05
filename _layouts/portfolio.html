@@ -1,0 +1,37 @@
+---
+layout: nowrap
+---
+
+<div class="page-content">
+  <div class="wrapper">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <span class="meta-more">
+        {% for meta in page.meta %}
+          {% if meta[0] != "date" %}
+            <span>{{ meta[1] }}</span>
+          {% else %}
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="date">
+              {{ meta[1] | date: "%B %Y" }}
+            </time>
+          {% endif %}
+          {% if forloop.last == false %}
+            <span>{{ site.item_separator }}</span>
+          {% endif %}
+        {% endfor %}
+      </span>
+    </header>
+  </div>
+  <div class="portfolio-img">
+    <img src="{{ page.imgpath | append: page.image | prepend: page.baseurl }}"
+         alt="{{ page.img_alt }}" title="{{ page.img_alt }}">
+  </div>
+  <div class="wrapper">
+    <div class="post-content">
+      <h2>{{ page.tagline }}</h2>
+      <p>{{ page.excerpt }}</p>
+      {% include fragments/content-more.html %}
+      {{ content }}
+    </div>
+  </div>
+</div>
