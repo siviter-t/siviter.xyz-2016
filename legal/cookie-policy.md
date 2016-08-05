@@ -2,6 +2,7 @@
 layout: page
 title: Cookie Policy
 permalink: /legal/cookie-policy/
+no_navlink: true
 ---
 
 ### What Are Cookies
