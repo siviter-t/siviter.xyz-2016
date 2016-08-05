@@ -29,7 +29,7 @@ pre {
 .highlight {
   background-color: $code-bg;
   color: $body-col;
-  border-radius: 8px;
+  @include border-radius(8px);
   @include box-shadow(3px 3px 8px 0 $brand-colour-dark);
   margin-bottom: $spacing-unit / 2 + 3px; // Compensating for the box-shadow
     

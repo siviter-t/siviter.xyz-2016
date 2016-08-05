@@ -21,14 +21,14 @@
     color: $brand-colour-light;
     background-color: $brand-colour-dark;
     border-top: 3px solid $brand-colour;
-    border-radius: 0 9px 0 0;
+    @include border-radius(0 9px 0 0);
     display: inline-block;
     text-align: right;
     .wrapper { padding-bottom: 8px; }
     span { color: $brand-colour-light; }
     &:hover {
       min-width: 100%;
-      border-radius: 0;
+      @include border-radius(0);
       border-top: 3px solid $hover-colour;
       background-color: $brand-colour;
       .post-link { color: $hover-colour; }
