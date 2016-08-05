@@ -33,8 +33,10 @@
       background-color: $brand-colour;
       .post-link { color: $hover-colour; }
     }
-    @include transition(min-width 1s, background-color 1s, color 0.5s, border 0.5s,
-                        border-radius 1s);
+    &, * {
+      @include transition(min-width 1s, background-color 1s, color 0.5s, border 0.5s,
+                          border-radius 1s);
+    }
   }
   
   .blog-excerpt {
