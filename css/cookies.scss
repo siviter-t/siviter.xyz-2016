@@ -1,0 +1,75 @@
+---
+---
+@charset "utf-8";
+@import "settings";
+@import "mixins";
+
+/* Cookie notification with Silktide's Cookie Consent
+ */
+
+.cc_banner-wrapper {
+  z-index: 9001;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+  
+.cc_container {
+  overflow: hidden;
+  padding: 9px;
+  padding-right: 0;
+  background: $brand-colour-light;
+  color: $brand-colour;
+  border-top: 3px solid $brand-colour;
+  
+  .cc_btn {
+    width: 33%;
+    max-width: 120px;
+    float: right;
+    padding: 8px 10px;
+    margin-left: 10px;
+    text-align: center;
+    display: block;
+    color: $brand-colour-light;
+    background-color: $brand-colour-dark;
+    border-left: 3px solid $brand-colour;
+    @include border-radius(9px 0 0 9px);
+    @include transition(background-color 1s, color 0.5s, border 1s);
+    &:visited {}
+    &:hover, &:active {
+      color: $hover-colour;
+      background-color: $brand-colour;
+      border-left: 3px solid $hover-colour;
+    }
+  }
+  
+  .cc_message {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 0;
+    display: block;
+  }
+  
+  .cc_logo { display: none; }
+  
+  @include media-query-min(380px) { .cc_message { font-size: 0.8em; } }
+  @include media-query-min(524px) { .cc_message { font-size: 0.7em; } }
+  @include media-query-min(524px) { .cc_message { padding: 8px 15px; } }
+  @include media-query-min(600px) { .cc_message { font-size: 0.70em; } }
+  @include media-query-min(600px) { .cc_message { padding: 0; } }
+  @include media-query-min(800px) { .cc_message { font-size: 0.80em; } }
+  @include media-query-min(980px) { .cc_message { font-size: 0.90em; } }
+  @include media-query-min(1080px) { .cc_message { font-size: 1.00em; } }
+  @include media-query-min(1480px) { .cc_message { font-size: 0.80em; } }
+  @include media-query-min(1480px) { .cc_message { padding: 8px 15px; } }
+  @include media-query-min(1550px) { .cc_message { font-size: 0.90em; } }
+  @include media-query-min(1712px) { .cc_message { font-size: 1.00em; } }
+  @include media-print() { &, .cc_container { display: none; } }
+  &, * { @include animation(slideUp 0.8s); }
+}
+
+// Slide-up animation
+@include keyframes(slideUp) {
+  0% { @include transform(translateY(66px)); }
+  100% { @include transform(translateY(0)); }
+}

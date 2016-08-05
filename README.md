@@ -16,6 +16,7 @@ Still under active development.
 - Chapeau art: [OpenClipartVectors](https://pixabay.com/en/chapeau-confusion-destinations-1293807/).
 - Pure CSS parallax effect idea: [Keith](http://keithclark.co.uk/articles/practical-css-parallax/).
 - Background textures: [Subtle Patterns](http://subtlepatterns.com/).
+- EU cookie consent solution: [Silktide](https://silktide.com/tools/cookie-consent/).
 - Built with [Jekyll](http://jekyllrb.com/), a static site generator in Ruby.
 
 Copyright (c) 2016 Taylor Siviter.
