@@ -1,11 +1,13 @@
 ---
 ---
+/* @file cookies.scss
+ * @brief Cookie notification with Silktide's Cookie Consent
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
 @charset "utf-8";
 @import "settings";
 @import "mixins";
-
-/* Cookie notification with Silktide's Cookie Consent
- */
 
 .cc_banner-wrapper {
   z-index: 9001;
