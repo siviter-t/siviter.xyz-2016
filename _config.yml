@@ -91,7 +91,7 @@ defaults:
       path: ""
       type: portfolio
     values:
-      layout: page
+      layout: portfolio
       imgpath: /images/portfolio/
 
 # Plugins
