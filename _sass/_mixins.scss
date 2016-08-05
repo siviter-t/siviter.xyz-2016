@@ -35,16 +35,17 @@
 
 // Screen.max-width dependent styles 
 @mixin media-query($device) {
-  @media screen and (max-width: $device) {
-    @content;
-  }
+  @media screen and (max-width: $device) { @content; }
 }
 
 // Screen.min-width dependent styles 
 @mixin media-query-min($device) {
-  @media screen and (min-width: $device) {
-    @content;
-  }
+  @media screen and (min-width: $device) { @content; }
+}
+
+// Print dependent styles 
+@mixin media-print() {
+  @media print { @content; }
 }
 
 @mixin selectability($val: auto) {
