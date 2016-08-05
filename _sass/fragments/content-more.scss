@@ -1,0 +1,24 @@
+/* @file content-more.scss
+ * @brief Horizontal rule to denote more content
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+.content-more {
+  @extend %vertical-rhythm;
+  width: 100%;
+  text-align: center;
+  > span {
+    height: $icon-size;
+    display: inline-block;
+    vertical-align: baseline;
+    > hr {
+      margin: $icon-size / 2 0 0;
+      border-top: 1px solid $grey-colour;
+    }
+    > svg {
+      @include size($icon-size);
+      path { fill: $grey-colour; }
+    }
+    &:first-child, &:last-child { width: 33%; }
+  }
+}
