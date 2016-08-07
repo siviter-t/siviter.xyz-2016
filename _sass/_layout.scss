@@ -54,7 +54,6 @@ html, body {
     line-height: 56px;
     text-align: center;
     color: $brand-colour-light;
-    a, p { margin: 0; }
   }
   
   #left-panel {
@@ -62,6 +61,7 @@ html, body {
     z-index: 4;
     height: auto;
     top: 30%;
+    p { margin: 0; }
   }
   
   #site-title {
@@ -103,7 +103,7 @@ html, body {
 
 // Site header - contains menu
 #site-header {
-  z-index: 5;
+  z-index: 6;
   width: 100%;
   height: 56px;
   min-height: 56px;
@@ -140,7 +140,6 @@ html, body {
       background-color: $brand-colour;
       border-top: 3px solid $hover-colour;
     }
-    &:not(:last-child) { margin-right: 5px; }
     @include transition(line-height 0.25s ease-out, background-color 1s, height 0.5s,
                         color 0.5s, border 1s);
     @at-root &.active { border-top: 3px solid $hover-colour; }
