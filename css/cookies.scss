@@ -10,10 +10,11 @@
 @import "mixins";
 
 .cc_banner-wrapper {
-  z-index: 9001;
+  z-index: 5;
   width: 100%;
   bottom: 0;
   position: absolute;
+  line-height: 1.5;
   @include opacity(0.85);
 }
   
