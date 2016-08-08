@@ -1,0 +1,54 @@
+/* @file parallax.scss
+ * @brief Mixins for creating a pure css parallax effect
+ * @credit Original code/idea http://keithclark.co.uk/articles/practical-css-parallax/
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+@import "threed";
+
+
+/* Making a container of the parallax content
+ * $parent The parent element of the container e.g. body
+ * $element The element to use as a container - remember id-selectors for this and $parent
+ * $width The width of the container
+ * $height The height of the container
+ * $perspective Can use the global variable $parallax-perspective for simplicity
+ */
+@mixin parallax($parent, $element, $width, $height, $perspective: 1px) {
+  $parallax-perspective: null !default;
+  @if $parallax-perspective != null { $perspective: $parallax-perspective }
+ 
+  @supports ((perspective: 1px) and (not (-webkit-overflow-scrolling: touch))) {
+    #{$parent} {
+      height: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include transform(translateZ(0px));
+    }
+      
+    #{$element} {
+      width: $width;
+      height: $height;
+      position: absolute;
+      overflow-x: hidden;
+      overflow-y: auto;
+      @include perspective($perspective);
+      scroll-behavior: smooth;
+      
+      * { @include transform-style(preserve-3d); }
+    }
+
+    @content;
+  }
+}
+
+/* To be called by children of parallax-container for their parallaxyness
+ * $distance Distance to offset the element. Higher values = quicker scroll
+ * $val Any other transformations to apply onto the element
+ * $perspective Can use the global variable $parallax-perspective for simplicity
+ */
+@mixin parallax-transform($distance: 0, $val: null, $perspective: 1px) {
+  $parallax-perspective: null !default;
+  @if $parallax-perspective != null { $perspective: $parallax-perspective }
+  @include transform(translateZ($distance * $perspective) scale(abs(1 - $distance)) $val);
+}
