@@ -6,7 +6,8 @@
 
 /* Centering a child element within a parent element
  * @note For use on the child element
- * @note Requires an explicit height and/or width to be set (i.e. no auto)
+ * @note Requires an explicit height and/or width to be set (i.e. no auto) unless used in
+ *       conjuction with the centre-text() mixin
  */
 @mixin centre-dom() {
   margin: auto;
@@ -16,19 +17,15 @@
 
 
 /* Centering text elements within a parent element
- * $height The height of the parent element
  * $horizontal Whether the text should be horizontally aligned
  * @note For use on a parent element
- * @note Requires an explicit height (i.e. no auto)
+ * @note If there is more than one child element, enclose them with a wrapping div  
  */
-@mixin centre-text($height: 0, $horizontal: false) {
-  height: $height;
-  line-height: $height;
+@mixin centre-text($horizontal: false) {
+  display: table;
   @if $horizontal { text-align: center; }
-  // All immediate children
-  > * {
-    line-height: normal;
-    display: inline-block;
+  > * { // All immediate children
+    display: inline-table;
     vertical-align: middle;
   }
 }
