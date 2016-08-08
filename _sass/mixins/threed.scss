@@ -1,0 +1,55 @@
+/* @file threed.scss
+ * @brief Mixins for 3D-dom manipulation
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+/* How many pixels away from the viewport a 3D DOM-element should be placed
+ */
+@mixin perspective($val: none) {
+  -webkit-perspective: $val;
+     -moz-perspective: $val;
+      -ms-perspective: $val;
+          perspective: $val;
+}
+
+
+/* Specifies where a 3D element is based in the x and y-axis
+ * @note Remember that it is the child elements that are positioned
+ */
+@mixin perspective-origin($val: 50% 50%) {
+  -webkit-perspective-origin: $val;
+     -moz-perspective-origin: $val;
+      -ms-perspective-origin: $val;
+          perspective-origin: $val;
+}
+
+
+/* For applying a 2D or 3D transformation onto an DOM-element
+ */
+@mixin transform($val: none) {
+  -webkit-transform: $val;
+     -moz-transform: $val;
+      -ms-transform: $val;
+          transform: $val;
+}
+
+
+/* Specifies the position of transformed element
+ */
+@mixin transform-origin($val: 50% 50% 0) {
+  -webkit-transform-origin: $val;
+     -moz-transform-origin: $val;
+      -ms-transform-origin: $val;
+          transform-origin: $val;
+}
+
+
+/* Specifies how nested element of a parent are rendered in 3D-space
+ */
+@mixin transform-style($val: flat) {
+  -webkit-transform-style: $val;
+     -moz-transform-style: $val;
+      -ms-transform-style: $val;
+          transform-style: $val;
+}
