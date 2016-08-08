@@ -1,0 +1,37 @@
+/* @file animation.scss
+ * @brief Mixins for animation and transitions
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+/* Animation
+ */
+@mixin animation($ani) {
+  -webkit-animation: $ani;
+     -moz-animation: $ani;
+      -ms-animation: $ani;
+       -o-animation: $ani;
+          animation: $ani;
+}
+
+
+/* Keyframes of an animation
+ */
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+     @-moz-keyframes #{$name} { @content; }
+      @-ms-keyframes #{$name} { @content; }
+       @-o-keyframes #{$name} { @content; }
+          @keyframes #{$name} { @content; }
+}
+
+
+/* Transitions on state change
+ */
+@mixin transition($ani...) {
+  -webkit-transition: $ani;
+     -moz-transition: $ani;
+      -ms-transition: $ani;
+       -o-transition: $ani;
+          transition: $ani;
+}
