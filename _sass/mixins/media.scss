@@ -1,0 +1,25 @@
+/* @file media.scss
+ * @brief Mixins for media queries
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+/* Screen.max-width dependent styles
+ */
+@mixin media-query($device) {
+  @media screen and (max-width: $device) { @content; }
+}
+
+
+/* Screen.min-width dependent styles
+ */
+@mixin media-query-min($device) {
+  @media screen and (min-width: $device) { @content; }
+}
+
+
+/* Print dependent styles
+ */
+@mixin media-print() {
+  @media print { @content; }
+}
