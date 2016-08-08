@@ -86,7 +86,7 @@ function getTopLevelPathname()
 (function() {
   $(document).ready(function() {
     var animate, bugs, canvas, createBugs, numOfBugs, update;
-    canvas = new Lampyridae.Canvas('world', '#canvas-enclosure');
+    canvas = new Lampyridae.Canvas('world', '#firefly-canvas');
     Lampyridae.bugSpeedMax = 5;
     numOfBugs = 15;
     bugs = [];
