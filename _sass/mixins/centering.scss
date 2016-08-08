@@ -1,0 +1,34 @@
+/* @file centering.scss
+ * @brief Mixins for centering dom elements
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+/* Centering a child element within a parent element
+ * @note For use on the child element
+ * @note Requires an explicit height and/or width to be set (i.e. no auto)
+ */
+@mixin centre-dom() {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+
+/* Centering text elements within a parent element
+ * $height The height of the parent element
+ * $horizontal Whether the text should be horizontally aligned
+ * @note For use on a parent element
+ * @note Requires an explicit height (i.e. no auto)
+ */
+@mixin centre-text($height: 0, $horizontal: false) {
+  height: $height;
+  line-height: $height;
+  @if $horizontal { text-align: center; }
+  // All immediate children
+  > * {
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
