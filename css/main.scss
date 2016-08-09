@@ -3,7 +3,7 @@
 @charset "utf-8";
 
 @import "settings";
-@import "mixins";
+@import "mixins/_mixins";
+@import "fragments/_fragments";
 @import "base", "layout", "blog", "portfolio";
 @import "graphics", "syntax";
-@import "fragments/_fragments";
