@@ -1,0 +1,41 @@
+/* @file common.scss
+ * @brief General commonly used mixins
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+@mixin border-radius($val: 0) {
+  -webkit-border-radius: $val;
+     -moz-border-radius: $val;
+       -o-border-radius: $val;
+          border-radius: $val;
+}
+
+
+@mixin box-shadow($val: none) {
+  -webkit-box-shadow: $val;
+     -moz-box-shadow: $val;
+          box-shadow: $val;
+}
+
+
+@mixin opacity($opacity: 1) {
+  opacity: $opacity;
+  filter: alpha(opacity=#{$opacity * 100});
+}
+
+
+@mixin selectability($val: auto) {
+  -webkit-touch-callout: $val;
+    -webkit-user-select: $val;
+     -khtml-user-select: $val;
+       -moz-user-select: $val;
+        -ms-user-select: $val;
+            user-select: $val;
+}
+
+
+@mixin size($width: 0, $height: $width) {
+  width: $width;
+  height: $height;
+}
