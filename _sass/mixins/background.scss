@@ -1,0 +1,17 @@
+/* @file background.scss
+ * @brief Mixins for generating lovely backgrounds
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+
+/* Linear gradient background from left to right
+ * $start Colour at the left-hand side
+ * $end Colour at the right-hand side
+ */
+@mixin linear-gradient-ltr($start, $end) {
+  background: $start;
+  background: -webkit-linear-gradient(left, $start, $end);
+  background:    -moz-linear-gradient(right, $start, $end);
+  background:      -o-linear-gradient(right, $start, $end);
+  background:         linear-gradient(to right, $start, $end);
+}
