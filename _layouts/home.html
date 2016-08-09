@@ -4,7 +4,16 @@
   <body>
     {% include side-column.html type="home" %}
     <div id="content-column">
-      {{ content }}
+      <div id="home">
+	      <div class="canvas-enclosure" id="home-canvas"></div>
+        <div id="home-content">
+          <div id="home-bg">
+            <p>{{ site.description }}</p>
+            {% include fragments/content-more.html %}
+            {{ content }}
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
