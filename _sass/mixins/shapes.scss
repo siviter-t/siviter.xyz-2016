@@ -1,0 +1,67 @@
+/* @file shapes.scss
+ * @brief Mixins for generating geometric shapes
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+@import "common";
+@import "threed";
+
+
+/* An element in the shape of a circle
+ * $radius Radius of the circle
+ * $colour Colour of the shape
+ */
+@mixin circle($radius: 1, $colour: black) {
+	@include square(2 * $radius, $colour);
+	@include border-radius($radius);
+}
+
+
+/* An element in the shape of a rectangle
+ * $width Width of the rectangle
+ * $height Height of the rectangle
+ * $colour Colour of the shape
+ */
+@mixin rectangle($width: 1, $height: 1, $colour: black) {
+	width: $width;
+	height: $height;
+	background: $colour;
+}
+
+
+/* An element in the shape of a square
+ * $size Side length of the square
+ * $colour Colour of the shape
+ */
+@mixin square($size: 1, $colour: black) {
+	@include rectangle($size, $size, $colour);
+}
+
+
+/* An element in the shape of a triangle
+ * $base Width of the border at the base of the triangle (i.e. border opposite direction)
+ * $left Width of the border to the left of the base
+ * $right Width of the border to the right of the base
+ * $dir Direction of the primary apex of the triangle [top|right|bottom|left]
+ * $colour Colour of the shape
+ */
+@mixin triangle($base: 1, $left: 1, $right: 1, $colour: black, $dir: top) {
+  // Possible triangle orientations
+  $dirs: (
+    top: (bottom, left, right),
+    right: (left, top, bottom),
+    bottom: (top, right, left),
+    left: (right, bottom, top)
+  );
+  
+  // Check if a correct orientation has been passed
+  @if map-has-key($dirs, $dir) {} @else {
+    @error "@mixin triangle requires a valid direction. Options: top, right, bottom, left";
+  }
+  
+  width: 0;
+  height: 0;
+  border-#{nth(map-get($dirs, $dir), 1)}: $base solid $colour;
+  border-#{nth(map-get($dirs, $dir), 2)}: $left solid transparent;
+  border-#{nth(map-get($dirs, $dir), 3)}: $right solid transparent;
+}
