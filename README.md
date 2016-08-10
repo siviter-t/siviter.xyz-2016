@@ -19,4 +19,13 @@ Still under active development.
 - EU cookie consent solution: [Silktide](https://silktide.com/tools/cookie-consent/).
 - Built with [Jekyll](http://jekyllrb.com/), a static site generator in Ruby.
 
+### License
+
 Copyright (c) 2016 Taylor Siviter.
+
+This website's source code is licensed under the MIT License.
+See the [license](http://siviter.xyz/legal/mit-license/) for full information.
+
+Unless otherwise directed, all other content is licensed under the
+Creative Commons Attribution-ShareAlike 4.0 International License.
+See this [link](https://creativecommons.org/licenses/by-sa/4.0/) for more information.
