@@ -1,13 +1,24 @@
 ---
-layout: page
+layout: nowrap
 title: 404!
 permalink: /404.html
 sitemap: false
 no_navlink: true
 ---
 
-<div style="text-align: center">
-  <h1>Woops! How embarrassing, this page does not exist.</h1>
-  <p><br></p>
-  <img style="width: 75%;" src="{{ "/images/chapeau.svg" | prepend: site.baseurl }}" alt="Lost Chapeau" title="Lost Chapeau">
+<div style="width: 100%; height: 100%; position: absolute">
+  <div class="page-content">
+		<div class="wrapper">
+		  <header class="post-header">
+        <h1 class="post-title">{{ page.title }}</h1>
+      </header>
+    </div>
+  </div>
+  <div style="width: 75%; height: 70%; left: 12.5%; top: 15% ;bottom: 15%; position: absolute">
+    <h3 style="text-align: center">Woops! How embarrassing, this page does not exist.</h3>
+    <br>
+    <img style="width: 100%; height: 100%; display: block;"
+         src="{{ "/images/chapeau.svg" | prepend: site.baseurl }}"
+         alt="Lost Chapeau" title="Lost Chapeau">
+  </div>
 </div>
