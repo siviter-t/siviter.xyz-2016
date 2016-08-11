@@ -1,0 +1,47 @@
+/* @file curly-brackets.scss
+ * @brief Curly brackets turned 90 degrees!
+ * @Copyright (c) 2016 Taylor Siviter
+ * This source code is licensed under the MIT License.
+ * For full information, see the project's LICENSE file.
+ */ 
+
+
+/* For making a curly bracket around a dom element - only one mind
+ * $radius Radius of the bend at the curly parts of the bracket
+ * $w Width of the bracket path
+ * $h Height of the middle outward segment
+ * $colour Colour of the bracket
+ * $bg Background colour of the parent element(s)
+ * $dir Which side of the element to add bracket [top|bottom]
+ * @note Target element must be careful with the ::before/::after pseudo elements.
+ */
+@mixin curly-brackets($radius, $w, $h, $colour, $bg, $dir) {
+  // Check if a correct orientation has been passed
+  @if $dir == top or $dir == right or $dir == bottom or $dir == left {} @else {
+    @error "@mixin curly-brackets requires a valid direction. E.g. top, right, bottom, left";
+  }
+  
+  width: 100%;
+  height: 3 * $radius / 2;
+  border-#{$dir}: $w solid $brand-colour;
+  @include border-radius($radius);
+  position: relative;
+  
+  &::before, &::after {
+    content: "";
+    margin: auto;
+    position: absolute;
+    @if $dir == top or $dir == bottom { left: 0; right: 0; }
+    @if $dir == right or $dir == left { top: 0; bottom: 0; }
+  }
+  
+  &::before {
+    #{$dir}: -$h - $w / 2;
+    @include triangle($h, $h, $h, $colour, $dir);
+  }
+  
+  &::after {
+    #{$dir}: -$h + $w;
+    @include triangle($h, $h, $h, $bg, $dir);
+  }
+}
