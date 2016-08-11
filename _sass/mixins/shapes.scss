@@ -56,7 +56,7 @@
   
   // Check if a correct orientation has been passed
   @if map-has-key($dirs, $dir) {} @else {
-    @error "@mixin triangle requires a valid direction. Options: top, right, bottom, left";
+    @error "@mixin triangle requires a valid direction. E.g. top, right, bottom, left";
   }
   
   width: 0;
