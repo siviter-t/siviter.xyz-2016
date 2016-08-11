@@ -237,19 +237,24 @@ html, body {
       @include centre-text(true);
       width: 66%;
       
-      #home-bg {
-        padding: $spacing-unit / 2 $spacing-unit / 4 $spacing-unit / 8;
-        border-top: 3px solid $brand-colour;
-        border-bottom: 3px solid $brand-colour;
-        @include border-radius(9px);
-        &:hover {
-          border-top: 3px solid $hover-colour;
-          border-bottom: 3px solid $hover-colour;
-          hr { border-top: 1px solid $hover-colour; }
-          svg { path { fill: $hover-colour; } }
-        }
-        &, * { @include transition(border 1s, fill 1s); }
+      #home-bg { padding: $spacing-unit / 2 $spacing-unit / 4 $spacing-unit / 8; }
+      #curly-brackets-top { 
+        @include curly-brackets(9px, 3px, 12px, $brand-colour, $bg-colour, top);
       }
+      #curly-brackets-bottom { 
+        @include curly-brackets(9px, 3px, 12px, $brand-colour, $bg-colour, bottom);
+      }
+      &:hover {
+        hr { border-top: 1px solid $hover-colour; }
+        svg { path { fill: $hover-colour; } }
+        #curly-brackets-top { 
+          @include curly-brackets(9px, 3px, 12px, $hover-colour, $bg-colour, top);
+        }
+        #curly-brackets-bottom { 
+          @include curly-brackets(9px, 3px, 12px, $hover-colour, $bg-colour, bottom);
+        }
+      }
+      &, *, *::before, *::after { @include transition(border 1s, background 1s, fill 1s); }
     }
   }
   
