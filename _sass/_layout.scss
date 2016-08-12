@@ -89,7 +89,7 @@ html, body {
     @include media-query-min($full-hd) { font-size: 3.5em; }
   }
   
-  #site-description {
+  #site-tagline {
     font-size: 1em;
     line-height: 200%;
     font-weight: 300;
