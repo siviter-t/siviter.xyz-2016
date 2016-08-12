@@ -1,0 +1,38 @@
+/* @file view-on-github.scss
+ * @brief A nice view on github button
+ * @Copyright (c) 2016 Taylor Siviter
+ * This source code is licensed under the MIT License.
+ * For full information, see the project's LICENSE file.
+ */
+ 
+.view-on-github {
+  @include size(72px);
+  font-size: 12px;
+  line-height: 12px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  top: 0; right: 0;
+  background: $brand-colour-dark;
+  &::before { 
+    content: "View me on GitHub!";
+    width: 54px;
+    margin: 14px -2px 0 0;
+    position: absolute;
+    top: 0; right: 0;
+    color: $brand-colour-light;
+    @include transform(rotate(45deg));
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    @include triangle(72px, 0, 72px, $bg-colour, top);
+    @include box-shadow(-3px 3px 15px 0px rgba(0,0,0,0.5));
+  }
+  &:hover {
+    background: $brand-colour;
+    &::before { color: $hover-colour;}
+  }
+  &, &::before { @include transition(color 1s, background 1s); }
+}
