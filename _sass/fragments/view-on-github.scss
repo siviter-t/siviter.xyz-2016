@@ -35,5 +35,4 @@
     &::before { color: $hover-colour;}
   }
   &, &::before { @include transition(color 1s, background 1s); }
-  @include media-query($phone) { display: none; }
 }
