@@ -20,6 +20,9 @@
   }
 }
 
+// Remove folded github button on tablet
+@include media-query($tablet) { .view-on-github { display: none; } }
+
 // Slide structure
 .slide {
   min-height: 75%;
