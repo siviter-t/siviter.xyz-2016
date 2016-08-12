@@ -251,7 +251,10 @@ html, body {
       @include centre-text(true);
       width: 66%;
       
-      #home-bg { padding: $spacing-unit / 2 $spacing-unit / 4 $spacing-unit / 8; }
+      #home-bg {
+        padding: $spacing-unit / 2 $spacing-unit / 4 $spacing-unit / 8;
+        #site-description { font-size: 1.2em; }
+      }
       #curly-brackets-top { 
         @include curly-brackets(9px, 3px, 12px, $brand-colour, $bg-colour, top);
       }
