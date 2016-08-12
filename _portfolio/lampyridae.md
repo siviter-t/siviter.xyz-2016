@@ -1,7 +1,8 @@
 ---
 title: lampyridae.coffee
 slug: lampyridae
-tagline: A simple particle effect written in CoffeeScript
+tagline: A simple suite of particle effects written in CoffeeScript
+github: https://github.com/siviter-t/lampyridae.coffee
 meta:
   type: Front-end
   language: CoffeeScript
