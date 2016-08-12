@@ -76,13 +76,27 @@ html, body {
   }
   
   #site-title {
-    font-size: 34px;
+    font-size: 2em;
     font-weight: 300;
+    line-height: 150%;
     letter-spacing: -1px;
     border-bottom: 1px solid $brand-colour;
     padding-bottom: 6px;
     color: $brand-colour-light;
     &:hover { color: $hover-colour; }
+    @include media-query-min($laptop) { font-size: 2.5em; }
+    @include media-query-min($laptop-l) { font-size: 3.0em; }
+    @include media-query-min($full-hd) { font-size: 3.5em; }
+  }
+  
+  #site-description {
+    font-size: 1em;
+    line-height: 200%;
+    font-weight: 300;
+    padding-top: $spacing-unit / 4;
+    @include media-query-min($laptop) { font-size: 1.25em; }
+    @include media-query-min($laptop) { padding-top: $spacing-unit / 2; }
+    @include media-query-min($full-hd) { font-size: 1.75em; }
   }
   
   // Make canvas full-width if it is the home page
