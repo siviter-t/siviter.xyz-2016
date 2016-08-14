@@ -39,3 +39,16 @@
   width: $width;
   height: $height;
 }
+
+
+/* Cross-platform CSS calc function
+ * $property CSS property to apply the calc function to
+ * $val Value or expression for the calc function
+ * @note If mixing units, enclose $val in quotation marks
+ * @example "@include calc(height, "100% - 200px");"
+ */
+@mixin calc($property, $val) {
+  #{$property}: -webkit-calc(#{$val});
+  #{$property}:    -moz-calc(#{$val});
+  #{$property}:         calc(#{$val});
+}
