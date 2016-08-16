@@ -1,17 +1,46 @@
 /* @file background.scss
  * @brief Mixins for generating lovely backgrounds
  * @Copyright (c) 2016 Taylor Siviter
+ * This source code is licensed under the MIT License.
+ * For full information, see the project's LICENSE file.
  */
 
 
-/* Linear gradient background from left to right
- * $start Colour at the left-hand side
- * $end Colour at the right-hand side
+/* Linear gradient background
+ * $type Type of linear gradient [vertical|horizontal|diagonal-d|diagonal-u]
+ * $gradients... Colour steps in standard W3C form e.g. [blue, red, ...] or [red 10%, blue 20%] 
  */
-@mixin linear-gradient-ltr($start, $end) {
-  background: $start;
-  background: -webkit-linear-gradient(left, $start, $end);
-  background:    -moz-linear-gradient(right, $start, $end);
-  background:      -o-linear-gradient(right, $start, $end);
-  background:         linear-gradient(to right, $start, $end);
+@mixin linear-gradient($type, $gradients...) {
+  // Possible linear orientations
+  $options: (
+      vertical: (top, top, to bottom, 0),
+    horizontal: (left, right, to right, 1),
+    diagonal-d: (-45deg, -45deg, 135deg, 0),
+    diagonal-u: (45deg, 45deg, 45deg, 0)
+  );
+  
+  // Check if a correct orientation has been passed
+  @if map-has-key($options, $type) {} @else {
+    @error "@mixin linear-gradient requires a valid type of orientation.";
+  }
+  
+  background: nth($gradients, 1); // Fallback
+  background: -webkit-linear-gradient(nth(map-get($options, $type), 1), $gradients);
+  background:    -moz-linear-gradient(nth(map-get($options, $type), 2), $gradients);
+  background:      -o-linear-gradient(nth(map-get($options, $type), 2), $gradients);
+  background:         linear-gradient(nth(map-get($options, $type), 3), $gradients);
+  @include linear-ms-fallback(nth($gradients, 1),
+                              nth($gradients, length($gradients)),
+                              nth(map-get($options, $type), 4));
+}
+
+
+/* Fallback linear gradient for IE6-9
+ * $start Colour at the left-hand or top side
+ * $end Colour at the right-hand or bottom side
+ * $horizontal Left-to-right [1] or top-to-bottom [0]
+ */
+@mixin linear-ms-fallback($start: #fff, $end: #000, $horizontal: 0) {
+  filter: progid:DXImageTransform.Microsoft.gradient(
+            startColorstr='#{$start}', endColorstr='#{$end}', GradientType=#{$horizontal});
 }
