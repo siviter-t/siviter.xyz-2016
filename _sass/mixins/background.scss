@@ -24,14 +24,20 @@
     @error "@mixin linear-gradient requires a valid type of orientation.";
   }
   
-  background: nth($gradients, 1); // Fallback
+  // Check if an argList or a list has been passed and change first/last colours accordingly
+  $first: nth($gradients, 1);
+  $last: nth($gradients, length($gradients));
+  @if type-of(nth($gradients, 1)) == list {
+    $first: nth(nth($gradients, 1), 1);
+    $last: nth(nth($gradients, 1), length(nth($gradients, 1)));
+  }
+  
+  background: $first; // Fallback
   background: -webkit-linear-gradient(nth(map-get($options, $type), 1), $gradients);
   background:    -moz-linear-gradient(nth(map-get($options, $type), 2), $gradients);
   background:      -o-linear-gradient(nth(map-get($options, $type), 2), $gradients);
   background:         linear-gradient(nth(map-get($options, $type), 3), $gradients);
-  @include linear-ms-fallback(nth($gradients, 1),
-                              nth($gradients, length($gradients)),
-                              nth(map-get($options, $type), 4));
+  @include linear-ms-fallback($first, $last, nth(map-get($options, $type), 4));
 }
 
 
