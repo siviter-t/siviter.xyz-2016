@@ -8,9 +8,10 @@
 
 /* Linear gradient background
  * $type Type of linear gradient [vertical|horizontal|diagonal-d|diagonal-u]
+ * $repeat bool Whether the gradient should repeat
  * $gradients... Colour steps in standard W3C form e.g. [blue, red, ...] or [red 10%, blue 20%] 
  */
-@mixin linear-gradient($type, $gradients...) {
+@mixin linear-gradient($type, $repeat, $gradients...) {
   // Possible linear orientations
   $options: (
       vertical: (top, top, to bottom, 0),
@@ -32,11 +33,15 @@
     $last: nth(nth($gradients, 1), length(nth($gradients, 1)));
   }
   
+  // Check if the gradient should repeat
+  @if $repeat { $repeat: repeating-; }
+  @else { $repeat: null; }
+  
   background: $first; // Fallback
-  background: -webkit-linear-gradient(nth(map-get($options, $type), 1), $gradients);
-  background:    -moz-linear-gradient(nth(map-get($options, $type), 2), $gradients);
-  background:      -o-linear-gradient(nth(map-get($options, $type), 2), $gradients);
-  background:         linear-gradient(nth(map-get($options, $type), 3), $gradients);
+  background: -webkit-#{$repeat}linear-gradient(nth(map-get($options, $type), 1), $gradients);
+  background:    -moz-#{$repeat}linear-gradient(nth(map-get($options, $type), 2), $gradients);
+  background:      -o-#{$repeat}linear-gradient(nth(map-get($options, $type), 2), $gradients);
+  background:         #{$repeat}linear-gradient(nth(map-get($options, $type), 3), $gradients);
   @include linear-ms-fallback($first, $last, nth(map-get($options, $type), 4));
 }
 
