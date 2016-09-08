@@ -18,6 +18,7 @@ description: >
 url: "http://siviter.xyz" # the base hostname & protocol for your site
 email: taylor@siviter.xyz
 github_username:  siviter-t
+codepen_username: siviter-t
 linkedin_username: taylor-siviter
 item_separator: "&nbsp;&curren;&nbsp;"
 

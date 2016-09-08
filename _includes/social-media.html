@@ -1,5 +1,4 @@
 <ul class="site-social-media">
-  <!--Email Icon-->
   {% if site.email %}
   <li>
     <a href="mailto:{{ site.email }}">
@@ -7,7 +6,6 @@
     </a>
   </li>
   {% endif %}
-  <!--GitHub Icon-->
   {% if site.github_username %}
   <li>
     <a href="https://github.com/{{ site.github_username }}">
@@ -15,7 +13,13 @@
     </a>
   </li>
   {% endif %}
-  <!--LinkedIn Icon-->
+  {% if site.codepen_username %}
+  <li>
+    <a href="https://codepen.io/{{ site.codepen_username }}">
+      <span class="icon icon-codepen">{% include icons/codepen.svg %}</span>
+    </a>
+  </li>
+  {% endif %}
   {% if site.linkedin_username %}
   <li>
     <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}">
