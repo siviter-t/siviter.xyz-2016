@@ -34,7 +34,7 @@ Simply grab the latest minified library from the
 [lib](https://github.com/siviter-t/lampyridae.coffee/tree/master/lib)
 directory and include it in a HTML file using the usual script tags. For example
 
-```
+```html
 <script type="text/javascript" src="path/to/js/lampyridae-*.*.*-min.js"></script>
 ```
 
@@ -79,13 +79,13 @@ Compile this to JavaScript and include it like before after the body tags of the
 
 There are two main options for obtaining this source code. You could clone a copy of this repository with git
 
-```
+```bash
 git clone https://github.com/siviter-t/lampyridae.coffee.git
 ```
 
 or you could use npm if you have it installed locally.
 
-```
+```bash
 npm install lampyridae.coffee
 ```
 
