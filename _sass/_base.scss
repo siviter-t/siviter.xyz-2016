@@ -32,7 +32,7 @@ body {
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
-ul, ol, dl, figure, table,
+ul, ol, dl, figure,
 %vertical-rhythm {
   margin-bottom: $spacing-unit / 2;
 }
@@ -94,6 +94,33 @@ blockquote {
 
 // Horizontal rule
 hr { border-top: 2px solid $brand-colour; }
+
+/* Tables
+ */
+table {
+  @extend %vertical-rhythm;
+  padding: 0;
+  thead tr { background: $grey-colour-light; }
+  tr {
+    border-top: 1px solid $grey-colour-light;
+    margin: 0;
+    padding: 0; 
+    &:nth-child(2n) { background: $grey-colour-light; }
+    th {
+      font-weight: bold;
+      border: 1px solid $grey-colour-light;
+      margin: 0;
+      padding: 4px 12px;
+    }
+    td {
+      border: 1px solid $grey-colour-light;
+      margin: 0;
+      padding: 4px 12px;
+    }
+    th:first-child, td:first-child { margin-top: 0; }
+    th:last-child, td:last-child { margin-bottom: 0; }
+  }
+}
 
 /*
  * Wrapper
