@@ -1,8 +1,12 @@
-/*
- * Basic setup
+/* @file base.scss
+ * @brief Basic setup for trivial elements
+ * @Copyright (c) 2016 Taylor Siviter
+ * This source code is licensed under the MIT License.
+ * For full information, see the LICENSE file in the project root.
  */
 
-// Reset some basic elements
+/* Reset basic elements
+ */
 body, h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 dl, dd, ol, ul, figure {
@@ -10,9 +14,7 @@ dl, dd, ol, ul, figure {
   padding: 0;
 }
 
-
-/*
- * Basic styling
+/* Basic styling
  */
 body {
   font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
@@ -26,9 +28,7 @@ body {
   font-kerning: normal;
 }
 
-
-/*
- * Set `margin-bottom` to maintain vertical rhythm
+/* Set `margin-bottom` to maintain vertical rhythm
  */
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
@@ -37,37 +37,29 @@ ul, ol, dl, figure, .cp_embed_iframe,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-/**
- * Images
+/* Images
  */
 img {
   max-width: 100%;
   vertical-align: middle;
 }
 
-
-/*
- * Figures
+/* Figures
  */
 figure > img { display: block; }
 
 figcaption { font-size: $small-font-size; }
 
-/*
- * Lists
+/* Lists
  */
 ul, ol { margin-left: $spacing-unit; }
 li { > ul, > ol { margin-bottom: 0; } }
 
-/*
- * Headings
+/* Headings
  */
 h1, h2, h3, h4, h5, h6 { font-weight: $base-font-weight; }
 
-
-/*
- * Links
+/* Links
  */
 a {
   color: $brand-colour;
@@ -77,9 +69,7 @@ a {
   @include transition(color 1s);
 }
 
-
-/*
- * Blockquotes
+/* Blockquotes
  */
 blockquote {
   color: $grey-colour;
@@ -92,7 +82,8 @@ blockquote {
   > :last-child { margin-bottom: 0; }
 }
 
-// Horizontal rule
+/* Horizontal rule
+ */
 hr { border-top: 2px solid $brand-colour; }
 
 /* Tables
@@ -122,8 +113,7 @@ table {
   }
 }
 
-/*
- * Wrapper
+/* Wrapper
  */
 .wrapper {
   max-width: $content-width - 2 * $spacing-unit;
@@ -139,8 +129,7 @@ table {
   }
 }
 
-/*
- * Clearfix
+/* Clearfix
  * IE<8
  */
 %clearfix {
@@ -151,8 +140,7 @@ table {
   }
 }
 
-/*
- * Webkit Scrollbar
+/* Webkit Scrollbar
  */
 ::-webkit-scrollbar {
 	width: 4px;
