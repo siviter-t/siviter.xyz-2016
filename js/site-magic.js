@@ -1,11 +1,8 @@
-/*!
- * \file site-magic.js
- * \author Taylor Siviter
- * \date July  2016
- * \brief Enables the interaction on siviter.xyz
- * \copyright Mozilla Public License, Version 2.0.
- * This Source Code Form is subject to the terms of the MPL, v. 2.0. If a copy of the MPL was
- * not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+/* @file site-magic.js
+ * @brief Enables the interaction on siviter.xyz
+ * @Copyright (c) 2016 Taylor Siviter
+ * This source code is licensed under the MIT License.
+ * For full information, see the LICENSE file in the project root.
  */
  
 /// Wait for the document to be ready and initialise
@@ -46,9 +43,8 @@ function fixMobileHeights()
 /// Fixes varying heights of the side-column on mobile where the viewport changes size
 /// when scrolled down - i.e. the search bar collapses up, etc.
 {
-  var isMobile = window.matchMedia("only screen and (max-width: 600px)");
-  if (isMobile.matches)
-  {
+  var isMobile = window.matchMedia("only screen and (max-width: 600px)").matches;
+  if (isMobile) {
     $('#side-column').css('height', $(window).height() + "px");
     $('#side-column').css('min-height', $(window).height() + "px");
   }
@@ -79,37 +75,45 @@ function getTopLevelPathname()
   return path.substr(path.lastIndexOf("/") + 1);
 }
 
-/*
- * Example usage of lampyridae.coffee
- */
+/// Fireflies with lampyridae.coffee in the side-column
+$(document).ready(function() {
+  var canvas, createFireflies, fireflies, total, updateFireflies;
+  var isMobile = window.matchMedia("only screen and (max-width: 600px)").matches;
+  
+  require('particle/firefly');
+  
+  canvas = new Lampyridae.Canvas('world', 'firefly-canvas');
 
-(function() {
-  $(document).ready(function() {
-    var animate, bugs, canvas, createBugs, numOfBugs, update;
-    canvas = new Lampyridae.Canvas('world', '#firefly-canvas');
-    Lampyridae.bugSpeedMax = 5;
-    numOfBugs = 15;
-    bugs = [];
-    createBugs = function() {
-      var bug, i, j, ref;
-      for (i = j = 0, ref = numOfBugs; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
-        bug = new Lampyridae.Bug(canvas);
-        bugs.push(bug);
-      }
-    };
-    animate = function() {
-      canvas.draw.clear();
-      update();
-      requestAnimationFrame(animate);
-    };
-    update = function() {
-      var i, j, ref;
-      for (i = j = 0, ref = numOfBugs; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
-        bugs[i].update();
-      }
-    };
-    createBugs();
-    animate();
-  });
+  Lampyridae.Firefly.prototype.speedMax = (isMobile) ? 3 : 5;
+  Lampyridae.Firefly.prototype.enableGlow = true;
+  Lampyridae.Firefly.prototype.glowFactor = 4;
 
-}).call(this);
+  total = 15;
+  fireflies = [];
+
+  (createFireflies = function() {
+    var firefly, i, j, ref, results;
+    results = [];
+    for (i = j = 0, ref = total; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+      firefly = new Lampyridae.Firefly(canvas, {bound: "periodic"});
+      results.push(fireflies.push(firefly));
+    }
+    return results;
+  })();
+
+  updateFireflies = function() {
+    var i, j, ref, results;
+    results = [];
+    for (i = j = 0, ref = total; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
+      results.push(fireflies[i].update());
+    }
+    return results;
+  };
+
+  canvas.addUpdate(canvas.draw.clear);
+  canvas.addUpdate(updateFireflies);
+  canvas.animate();
+  
+  /// Allow the animation pause state to be toggled by the user 
+  $('#firefly-pause').on('click touch', function () { canvas.pause(); });
+});
