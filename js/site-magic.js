@@ -88,7 +88,7 @@ $(document).ready(function() {
   Lampyridae.Firefly.prototype.enableGlow = true;
   Lampyridae.Firefly.prototype.glowFactor = 4;
 
-  total = 15;
+  total = (isMobile) ? 8 : 15;
   fireflies = [];
 
   (createFireflies = function() {
