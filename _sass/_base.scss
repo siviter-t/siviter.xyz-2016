@@ -33,9 +33,7 @@ body {
 h1, h2, h3, h4, h5, h6,
 p, blockquote, pre, hr,
 ul, ol, dl, figure, .cp_embed_iframe,
-%vertical-rhythm {
-  margin-bottom: $spacing-unit / 2;
-}
+%vertical-rhythm { margin-bottom: $spacing-unit / 2; }
 
 /* Images
  */
@@ -78,7 +76,6 @@ blockquote {
   font-size: 18px;
   letter-spacing: -1px;
   font-style: italic;
-
   > :last-child { margin-bottom: 0; }
 }
 
@@ -90,6 +87,8 @@ hr { border-top: 2px solid $brand-colour; }
  */
 table {
   @extend %vertical-rhythm;
+  margin-right: auto;
+  margin-left: auto;
   padding: 0;
   thead tr { background: $grey-colour-light; }
   tr {
