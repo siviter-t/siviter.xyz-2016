@@ -7,7 +7,6 @@ categories: lampyridae
 <script type="text/x-mathjax-config">MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}});</script>
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
-During the summer of 2016 I decided I wanted to simulate fireflies for my website and its development lead to lampyridae.coffee was the child of this example.
 
 ### The Colours of Firefly Bioluminescence
 
