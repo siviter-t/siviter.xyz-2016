@@ -15,31 +15,30 @@ A quick Google [image search](https://www.google.co.uk/search?q=firefly+insect&t
 
 More here.
 
-| <span id="table-1">Species</span>           | Peak Wavelength / Å | Peak Wavelength / nm |
-|:-------------------------------------------:|:-------------------:|:--------------------:|
-| Pyrophorus plzgiophthalamus (dorsal organ)  | 5430                | 543.0                |
-| Photuris pennsylvanica                      | 5524                | 552.4                |
-| Diphotus sp.                                | 5550                | 555.0                |
-| Photuris jamaicensis                        | 5550                | 555.0                |
-| Photinus pardalus                           | 5600                | 560.0                |
-| Photinus pyralis                            | 5621                | 562.1                |
-| Photinus commissus                          | 5640                | 564.0                |
-| Photinus marginellus                        | 5646                | 564.6                |
-| Photinus pallens                            | 5650                | 565.0                |
-| Photinus xanthophotus ♀                     | 5670                | 567.0                |
-| Photinus leucopyge                          | 5690                | 569.0                |
-| Lecontea sp.                                | 5700                | 570.0                |
-| Photinus lobatus                            | 5700                | 570.0                |
-| Photinus evanescens                         | 5700                | 570.0                |
-| Photinus melanurus                          | 5700                | 570.0                |
-| Photinus nothus                             | 5700                | 570.0                |
-| Photinus (new species)                      | 5700                | 570.0                |
-| Photinus morbosus-ceratus                   | 5710                | 571.0                |
-| Photinus gracilobus                         | 5720                | 572.0                |
-| Photinus scintillans ♀                      | 5748                | 574.8                |
-| Photinus scintillans ♂                      | 5751                | 575.1                |
-| Pyrophorus pliophthalamus (ventral organ)   | 5820                | 582.0                |
-{: align="center"}
+| <span id="table-1">Species</span>           | Peak Wavelength / nm |
+|:-------------------------------------------:|:--------------------:|
+| Pyrophorus plzgiophthalamus (dorsal organ)  | 543.0                |
+| Photuris pennsylvanica                      | 552.4                |
+| Diphotus sp.                                | 555.0                |
+| Photuris jamaicensis                        | 555.0                |
+| Photinus pardalus                           | 560.0                |
+| Photinus pyralis                            | 562.1                |
+| Photinus commissus                          | 564.0                |
+| Photinus marginellus                        | 564.6                |
+| Photinus pallens                            | 565.0                |
+| Photinus xanthophotus ♀                     | 567.0                |
+| Photinus leucopyge                          | 569.0                |
+| Lecontea sp.                                | 570.0                |
+| Photinus lobatus                            | 570.0                |
+| Photinus evanescens                         | 570.0                |
+| Photinus melanurus                          | 570.0                |
+| Photinus nothus                             | 570.0                |
+| Photinus (new species)                      | 570.0                |
+| Photinus morbosus-ceratus                   | 571.0                |
+| Photinus gracilobus                         | 572.0                |
+| Photinus scintillans ♀                      | 574.8                |
+| Photinus scintillans ♂                      | 575.1                |
+| Pyrophorus pliophthalamus (ventral organ)   | 582.0                |
 
 **Table 1**. The bioluminescent peak wavelengths from a sample of Firefly species&nbsp;[[1]](#ref-1).
 {: style="text-align: center;"}
@@ -68,7 +67,7 @@ where $$h_{\text{S}}$$ is the hue in degrees to use as a scaling factor, $$\lamb
 
 ### L'exemple on CodePen
 
-<p data-height="265" data-theme-id="0" data-slug-hash="mAVjzB" data-default-tab="result" data-user="siviter-t" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/siviter-t/pen/mAVjzB/">Creating Fireflies with lampyridae.coffee</a> by Taylor Siviter (<a href="http://codepen.io/siviter-t">@siviter-t</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<p data-height="348" data-theme-id="0" data-slug-hash="mAVjzB" data-default-tab="result" data-user="siviter-t" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/siviter-t/pen/mAVjzB/">Generating Fireflies with lampyridae.coffee</a> by Taylor Siviter (<a href="http://codepen.io/siviter-t">@siviter-t</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ### References
