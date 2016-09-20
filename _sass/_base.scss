@@ -112,6 +112,23 @@ table {
   }
 }
 
+/* Reset tables for code snippets
+ */
+code {
+  table {
+    margin: 0;
+    padding: 0;
+    tr {
+      border: none;
+      background: none;
+      td, th {
+        border: none;
+        padding: 0;
+      }
+    }
+  }
+}
+
 /* Wrapper
  */
 .wrapper {
