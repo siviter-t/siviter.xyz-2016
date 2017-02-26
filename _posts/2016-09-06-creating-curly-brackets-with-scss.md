@@ -5,13 +5,28 @@ author: Taylor Siviter
 categories: scss
 ---
 
-Back when I was assembling the first version of this website, on a whim, I decided that I wanted to frame the introductory home text in curly brackets: **{** and **}**. At the time of this wondrous idea, I also happened to be interested in creating various geometric shapes with pure CSS/SCSS and admittedly I didn't want to mess around with positioning characters from some arbitrary font &ndash; I don't think that would be a particularly nice solution. One thing led to another and hey presto, I had created something akin to curly brackets using only border effects and the ```::before``` & ```::after``` pseudo-elements.
-Why you may ask? I guess that it is because they have become synonymous with computer code and it somewhat fits the theme I was going for.
-Read on if you are interested in how I made them; or if you just want to use the code, a working example on CodePen is available at the bottom of this article.
+Back when I was assembling the first version of this website, on a whim, I decided that
+I wanted to frame the introductory home text in curly brackets: **{** and **}**. At the time
+of this wondrous idea, I also happened to be interested in creating various geometric shapes
+with pure CSS/SCSS and admittedly I didn't want to mess around with positioning characters
+from some arbitrary font &ndash; I don't think that would be a particularly nice solution. One
+thing led to another and hey presto, I had created something akin to curly brackets using only
+border effects and the _::before_ & _::after_ pseudo-elements.
+Why you may ask? I guess that it is because they have become synonymous with computer code and
+it somewhat fits the theme I was going for.
+Read on if you are interested in how I made them; or if you just want to use the code, a working
+example on CodePen is available at the bottom of this article.
 
 ### SCSS Triangles
 
-First things first, if you do not already know, it is quite possible to create triangles using only CSS &ndash; no images &ndash; by taking advantage of a subtlety of borders around a DOM element. I've used them in replicating the *sticky-outy bit* in the middle of the bracket &ndash; apologies for the less than technical term; however, as triangles are a very well documented CSS technique on Google, I will not be delving into their quirks or construction. For the sake of example though, below is SCSS mixin implementation of a triangle from my source code of this site &ndash; feel free to adapt or use your own version.
+First things first, if you do not already know, it is quite possible to create triangles using
+only CSS &ndash; no images &ndash; by taking advantage of a subtlety of borders around a DOM
+element. I've used them in replicating the *sticky-outy bit* in the middle of the bracket
+&ndash; apologies for the less than technical term; however, as triangles are a very well
+documented CSS technique on Google, I will
+not be delving into their quirks or construction. For the sake of example though, below is
+SCSS mixin implementation of a triangle from my source code of this site &ndash; feel free to
+adapt or use your own version.
 
 {% highlight scss linenos %}
 /* An element in the shape of a triangle
@@ -43,12 +58,19 @@ First things first, if you do not already know, it is quite possible to create t
 }
 {% endhighlight %}
 
-For those who are unfamiliar with sassy mixins, simply include the mixin under a relevant selector by using a statement like ```@include triangle(24px, 24px, 24px, black, top)``` and compile the stylesheet to CSS as usual.
+For those who are unfamiliar with sassy mixins, simply include the mixin under a relevant
+selector by using a statement like ```@include triangle(24px, 24px, 24px, black, top)``` and
+compile the stylesheet to CSS as usual.
 
 ### SCSS Curly Brackets
 
-Much like the triangle mixin above, I implemented the brackets in a similar way to include on an element.
-Now that we can produce triangles, my method for creating the *sticky-outy bit* of the bracket is by absolutely positioning two triangles in the ```::before``` & ```::after``` pseudo-elements; one coloured as the bracket, and another overlaid on-top with the colour of the background. For example, if we are producing a bracket on the left or right of the element, we'll denote this direction with the variable ```$dir```, we can use something like the following.
+Much like the triangle mixin above, I implemented the brackets in a similar way to include on
+an element. Now that we can produce triangles, my method for creating the *sticky-outy bit* of
+the bracket is by absolutely positioning two triangles in the _::before_ & _::after_
+pseudo-elements; one coloured as the bracket, and another overlaid on-top with the colour of
+the background. For example, if we are producing a bracket on the left or right of the element,
+we'll denote this direction with the variable _$dir_, we can use something like the
+following.
 
 {% highlight scss linenos %}
 &::before {
@@ -61,13 +83,18 @@ Now that we can produce triangles, my method for creating the *sticky-outy bit* 
 }
 {% endhighlight %}
 
-As the overlaid triangles occupy the ```::before``` & ```::after``` pseudo-elements, the main element is free to use its own border effects. This allows a solid border to be set on the relevant side of DOM element; creating the main body of the bracket.
+As the overlaid triangles occupy the _::before_ & _::after_ pseudo-elements, the main element
+is free to use its own border effects. This allows a solid border to be set on the relevant
+side of DOM element; creating the main body of the bracket.
 
 {% highlight scss linenos %}
 border-#{$dir}: $w solid $colour
 {% endhighlight %}
 
-Next, the top and bottom end or *curly* part of the bracket. We are only using a single border on the main element, and so a simple border-radius will successfully emulate the curly ends of the bracket. As a CSS3 feature, this can be implemented in a cross-vendor and compliant way using the following mixin.
+Next, the top and bottom end or *curly* part of the bracket. We are only using a single border
+on the main element, and so a simple border-radius will successfully emulate the curly ends of
+the bracket. As a CSS3 feature, this can be implemented in a cross-vendor and compliant way
+using the following mixin.
 
 {% highlight scss linenos %}
 /* Cross-vendor border radius
@@ -80,7 +107,9 @@ Next, the top and bottom end or *curly* part of the bracket. We are only using a
 }
 {% endhighlight %}
 
-This can be set on the bracket with ```@include border-radius($radius)``` and it roughly concludes the main styling considerations for the brackets. Taking the above into account, a mixin for producing a bracket can be made; which could result in one like mine below.
+This can be set on the bracket with ```@include border-radius($radius)``` and it roughly
+concludes the main styling considerations for the brackets. Taking the above into account, a
+mixin for producing a bracket can be made; which could result in one like mine below.
 
 {% highlight scss linenos %}
 /* For making a curly bracket around a dom element - only one mind
@@ -124,7 +153,9 @@ This can be set on the bracket with ```@include border-radius($radius)``` and it
 }
 {% endhighlight %}
 
-For skimming readers, notice the use of the ```@include border-radius(...)``` and ```@include triangle(...)``` mixins. These need to either be provided &ndash; for example with my earlier snippets &ndash; or replaced with equivalent styles.
+For skimming readers, notice the use of the ```@include border-radius(...)``` and
+```@include triangle(...)``` mixins. These need to either be provided &ndash; for example with
+my earlier snippets &ndash; or replaced with equivalent styles.
 
 ### L'exemple on CodePen
 
