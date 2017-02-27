@@ -30,8 +30,8 @@ xkbset ma [delay] [interval] [time to max] [max speed] [curve]
 ```
 
 For those new to command-line interfaces, the brackets need to be replaced by a numerical value
-- tailored to your own taste of course. I have recently used the following for my configuration;
-mess with the numbers until it best suits you.
+&ndash; tailored to your own taste of course. I have recently used the following for my
+configuration; mess with the numbers until it best suits you.
 
 ```
 xkbset ma 60 10 10 20 10
