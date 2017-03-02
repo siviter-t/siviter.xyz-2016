@@ -24,9 +24,11 @@ I might update this post accordingly.
 
 ### Displacer
 
-<div style="text-align: center;">
-    <object type="application/x-shockwave-flash" data="/arc/flash/displacer.swf"
-            width="800" height="580" id="Displacer"></object>
+<div style="width: 80%; padding-top: 58%; box-sizing: border-box; 
+            position: relative; left: 10%;">
+    <object style="position: absolute; top: 0; left: 0;"
+            type="application/x-shockwave-flash" data="/arc/flash/displacer.swf"
+            width="100%" height="100%" id="Displacer"></object>
 </div><br>
 
 ### Support
