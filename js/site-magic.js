@@ -75,6 +75,15 @@ function getTopLevelPathname()
   return path.substr(path.lastIndexOf("/") + 1);
 }
 
+function invertRGB(rgb)
+/// Invert rgb string
+{
+  rgb = rgb.replace(/[^\d,]/g, '').split(',')
+  return "rgb(" + (255 - parseInt(rgb[0])).toString() + ','
+                + (255 - parseInt(rgb[1])).toString() + ','
+                + (255 - parseInt(rgb[2])).toString() + ')';
+}
+
 /// Fireflies with lampyridae.coffee in the side-column
 $(document).ready(function() {
   var canvas, createFireflies, fireflies, total, updateFireflies;
@@ -96,6 +105,7 @@ $(document).ready(function() {
     results = [];
     for (i = j = 0, ref = total; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
       firefly = new Lampyridae.Firefly(canvas, {bound: "periodic"});
+      firefly.colour = invertRGB(firefly.colour);
       results.push(fireflies.push(firefly));
     }
     return results;
