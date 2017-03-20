@@ -1,0 +1,14 @@
+/* @brief Negative palette for siviter.xyz
+ * @Copyright (c) 2016 Taylor Siviter
+ */
+
+$bg-colour: #F5F5F5;
+$text-colour: #111111;
+$hover-colour: invert(#86CC00);
+$brand-colour-light: invert(#E9EBE3);
+$brand-colour: invert(#757672); // Sidebar colour with overlay at 0.5 opacity
+$brand-colour-dark: invert(#3A3B39); // Sidebar colour with overlay at 0.75 opacity 
+$grey-colour: #828282;
+$grey-colour-light: lighten($grey-colour, 40%);
+$grey-colour-dark: darken($grey-colour, 25%);
+$pane-colour: invert(#000);
