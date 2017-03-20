@@ -21,7 +21,7 @@ Still under active development.
 
 ### License
 
-Copyright (c) 2016 Taylor Siviter.
+Copyright (c) 2016-17 Taylor Siviter.
 
 This website's source code is licensed under the MIT License.
 See the [license](http://siviter.xyz/legal/mit-license/) for full information.
