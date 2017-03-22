@@ -20,6 +20,7 @@
     min-width: 50%;
     color: $brand-colour-light;
     background-color: $brand-colour-dark;
+    background-image: url('/images/textures/t-square.png');
     border-top: 3px solid $brand-colour;
     @include border-radius(0 9px 0 0);
     display: inline-block;

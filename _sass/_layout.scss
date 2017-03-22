@@ -50,6 +50,7 @@ html, body {
     @extend %dom-layer;
     z-index: 2;
     background-color: $pane-colour;
+    background-image: url('/images/textures/t-square.png');
     @include opacity(0.75);
   }
   
