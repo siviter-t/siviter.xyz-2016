@@ -9,12 +9,13 @@
 title: Taylor Siviter
 author: Taylor Siviter
 domain_name: siviter.xyz
-tagline: Physicist, Programmer, Student
+tagline: Looking for employment opportunities!
 description: >
-  Hello there. I'm currently a Physics student based in the United Kingdom and
-  somewhat of a hobbyist programmer &ndash; from C++ to front-end web development. 
-  I'm also an infrequent writer of disjointed articles, and a lover of anything
-  remotely technological.
+  Hello there! I'm a soon-to-be Physics graduate and aspiring programmer based
+  in the United Kingdom. I have experience in several languages and technologies
+  (from C++ to front-end web development)
+  and have varied interests in design, modelling, and simulation
+  &ndash; in a nutshell, I'm a lover of anything remotely technological.
 url: "https://siviter.xyz" # the base hostname & protocol for your site
 email: taylor@siviter.xyz
 github_username:  siviter-t
