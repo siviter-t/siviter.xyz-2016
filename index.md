@@ -4,9 +4,6 @@ layout: home
 no_navlink: true
 ---
 
-To see any of my public work, check out my
-[portfolio]({{ "/portfolio/" | prepend: site.baseurl }}),
-[CodePen](https://codepen.io/siviter-t), and
-[GitHub](https://github.com/siviter-t) profiles.
-Otherwise, if you have any enquiries, please see my available contact options to
-the left.
+**Disclaimer**. The views and opinions expressed on this website are my own and do not under
+any circumstances represent the views held by my employer or those of any other
+associated parties.
