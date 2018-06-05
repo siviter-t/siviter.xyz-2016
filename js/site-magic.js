@@ -64,6 +64,7 @@ function enableGoogleAnalytics()
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-80839244-1', 'auto');
   ga('send', 'pageview');
+  window['ga-disable-UA-80839244-1'] = true;
 }
  
 function getTopLevelPathname()

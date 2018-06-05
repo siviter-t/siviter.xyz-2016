@@ -1,0 +1,109 @@
+.chronic-cookie-dialog-container {
+    width: 100%;
+    position: absolute;
+    top: auto;
+    left: auto;
+    bottom: auto;
+    right: auto;
+    border-bottom: 1px solid #abb;
+    box-shadow: 1px 0px 12px #899, 0px 5px 1px -5px #577 inset;
+    background: white;
+    opacity: 0.88;
+    z-index: 999;
+}
+
+.chronic-cookie-dialog-container table,
+.chronic-cookie-dialog-container table tr,
+.chronic-cookie-dialog-container table tr td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+@media screen and (max-width: 400px){
+    .chronic-cookie-dialog-container td {
+        display: table-row;
+    }
+
+    .chronic-cookie-dialog-container td:last-child {
+        text-align: center;
+    }
+}
+
+.chronic-cookie-dialog-container p {
+    font-size: 0.8em;
+}
+
+.chronic-cookie-dialog-container h3 {
+    font-size: 1em;
+}
+
+.chronic-cookie-dialog-title,
+.chronic-cookie-dialog-message {
+    margin: 12px;
+    line-height: 1;
+    color: #233;
+}
+
+.chronic-cookie-dialog-button {
+    cursor: pointer;
+    margin: 4px;
+    padding: 8px 12px;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    transition-duration: 0.4s;
+    color: #233;
+    background-color: white;
+    border: 1px solid #577;
+    border-radius: 12px;
+    font-size: 0.8em;
+}
+
+.chronic-cookie-dialog-button:last-child {
+    margin-right: 12px;
+}
+
+.chronic-cookie-dialog-button:hover {
+    color: white;
+    background-color: #577;
+    border-radius: 6px;
+}
+
+.chronic-cookie-dialog-top {
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: auto;
+    animation: slideInTop 0.5s ease-out;
+}
+
+.chronic-cookie-dialog-bottom {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    animation: slideInBottom 0.5s ease-out;
+}
+
+@keyframes slideInTop {
+    from {
+        opacity: 0;
+        top: -10%;
+    }
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        opacity: 0;
+        bottom: -10%;
+    }
+    to {
+        opacity: 1;
+        bottom: 0;
+    }
+}
