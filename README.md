@@ -1,3 +1,11 @@
+# :warning: Deprecated
+
+This repository has been deprecated and left for history.
+
+If interested, please see [siviter-t/siviter.xyz2](https://github.com/siviter-t/siviter.xyz2) for the JAM-inspired rework.
+
+---
+
 # Siviter.xyz
 
 #### A modern spin on the traditional curriculum vitae or portfolio
