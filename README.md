@@ -2,7 +2,7 @@
 
 This repository has been deprecated and left for history.
 
-If interested, please see [siviter-t/siviter.xyz2](https://github.com/siviter-t/siviter.xyz2) for the JAM-inspired rework.
+If interested, please see [siviter-t/siviter.xyz](https://github.com/siviter-t/siviter.xyz) for the latest and greatest.
 
 ---
 
